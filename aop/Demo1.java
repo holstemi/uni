@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.Math;
 
 public class Demo1{
 	
@@ -34,7 +35,14 @@ public class Demo1{
 			System.out.println(dom);
 		}
 		else if (demo == 5){
-			
+			int a = lukija.nextInt();
+			int b = lukija.nextInt();
+			int c = lukija.nextInt();
+			double disk = b*b-4*a*c
+			if (disk > 0){
+				System.out.println((-b+Math.sqrt(disk))/(2*a));
+				System.out.println((-b-Math.sqrt(disk))/(2*a));
+			}else{System.out.println("Kahta reallijuurta ei loytynyt");}
 		}
 		else if (demo == 6){
 			
