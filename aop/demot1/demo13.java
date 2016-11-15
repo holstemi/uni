@@ -7,19 +7,29 @@ public class demo13 {
 	public static void main(String[] q){
 
 		Random r = new Random();
-		int satunnaisluku = r.nextInt(SATUNNAISMAX); //Korkeintaan 15 arvoksi
+		int satunnaisluku = r.nextInt(SATUNNAISMAX); //Korkeintaan 15 satunnaisluvun arvoksi
+		System.out.println("Satunnaisluku:"+satunnaisluku); //Kontrolliprintti
 		String s = "";
-		
+		//13
 		for(int i=0; i<=satunnaisluku; i++){
-			int pituus = r.nextInt(4); //Satunnaisluku (max. 4)
-			if(s.length() < pituus){s += i;} //Lisää merkkijonnoon numeroita 0-4
-			int kokonaisluku = Integer.parseInt(s); //Muutetaan merkkijono numeroiksi
-			if(kokonaisluku%2 == 0){ //Jos parillinen 
-				s = (kokonaisluku/2)+""; //kokonaisluku jaetaan kahdella ja sijoitetaan s:ään
+			int pituus = r.nextInt(4); //Toinen satunnaisluku (max. 4). Jos tästä tulee 0, kun i=0 --> error
+			System.out.print("2. rnd muuttuja: "+pituus+" "); //Kontrolliprintti
+			if(s.length() < pituus){
+				s += i; //Lisää merkkijonnoon numeron väliltä 0-4
+			} //19
+			System.out.print("Merkkijono: "+s+" "); //Kontrolliprintti
+			int kokonaisluku = Integer.parseInt(s); //Muutetaan merkkijono numeroiksi. Heittää erroreita, kun s tyhjä
+			if(kokonaisluku%2 == 0){
+				s = (kokonaisluku/2)+""; //S jaetaan kahdella.
 			} 
+			System.out.println("Merkkijono: "+s+" "); //Kontrolliprintti
 		}
+		System.out.println("S pituus: "+s.length()); //Kontrolliprintti
 		
 		if(s.length() == satunnaisluku){System.out.println("Algoritmi onnistui.");} //Algoritmi onnistuu
 		else{System.out.println("Algoritmi ei t�ll� kertaa onnistunut.");} //Muuten epäonnistuu
 	}
 }
+
+//s.length() maksimiarvo on 3 ja min 1 --> epäonnistuu varmasti, kun satunnaisluku > 3 tai 0, jolloin s.length()=1.
+//Erikoistapauksena s.lenght() voi saada arvon 4, jos satunnaismuuttuja >= 10. Algoritmi epäonnistuu tällöinkin
