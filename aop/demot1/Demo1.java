@@ -9,12 +9,9 @@ public class Demo1{
 		int demo = lukija.nextInt();
 		lukija.nextLine();
 		if (demo == 1){
-			System.out.print("Ensimmainen merkkijono: ");
-			String s1 = lukija.nextLine();
-			System.out.print("Toinen merkkijono: ");
-			String s2 = lukija.nextLine();
-			System.out.print("Kolmas merkkijono: ");
-			String s3 = lukija.nextLine();
+			String s1 = args[0];
+			String s2 = args[1];
+			String s3 = args[2];
 			System.out.println("------------------------");
 			System.out.print("Lyhin merkkijono: ");
 			if ((s1.length() < s2.length())&&(s1.length() < s3.length())){
