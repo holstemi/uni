@@ -54,6 +54,8 @@ public class Demo1{
 				System.out.println("Sahkopostiosoitteesi domain -osa: " + dom);
 			}
 			else if (demo == 5){
+				System.out.println("Ratkaistaan 2. asteen yhtälö, joka muotoa ax²+bx+c=0, jossa a, b ja c kokonaislukuja");
+				System.out.println("------------------------");
 				System.out.print("a:n arvo:: ");
 				int a = lukija.nextInt();
 				System.out.print("b:n arvo: ");
@@ -62,7 +64,7 @@ public class Demo1{
 				int c = lukija.nextInt();
 				double disk = b*b-4*a*c;
 				System.out.println("------------------------");
-				if (disk > 0){
+				if (disk >= 0){
 					System.out.println("Juuri no. 1: " + (-b+Math.sqrt(disk))/(2*a));
 					System.out.println("Juuri no. 2: " + (-b-Math.sqrt(disk))/(2*a));
 				}else{System.out.println("Kahta reallijuurta ei loytynyt");}
