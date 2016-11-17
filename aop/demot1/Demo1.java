@@ -1,6 +1,9 @@
 import java.util.Scanner;
 import java.lang.Math;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class Demo1{
 	
 	public static void main(String[] args){
@@ -33,7 +36,13 @@ public class Demo1{
 				System.out.println("Vuoden 2015 lopussa olit: " + ika);
 			}
 			else if (demo == 3){
-				System.out.println("Vastaus erillisessa tiedostossa. ks. demo1.3.java");
+				try (BufferedReader br = new BufferedReader(new FileReader("demo13.java"))) {
+					String line = null;
+					while ((line = br.readLine()) != null) {
+						System.out.println(line);
+					}
+				}
+				catch(Exception e){System.out.println("Jokin meni vikaan. Vastaus erillisessa tiedostossa. ks. demo1.3.java");}
 			}
 			else if (demo == 4){
 				System.out.print("Sahkopostiosoitteesi: ");
@@ -82,6 +91,6 @@ public class Demo1{
 			}
 			lukija.close();
 		}
-		catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!")}
+		catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!");}
 	}
 }
