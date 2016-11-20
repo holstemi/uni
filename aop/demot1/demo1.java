@@ -4,7 +4,7 @@ import java.lang.Math;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Demo1{
+public class demo1{
 	
 	public static void main(String[] args){
 		try{
