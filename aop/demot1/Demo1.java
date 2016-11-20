@@ -12,6 +12,7 @@ public class Demo1{
 			System.out.print("Valitse demotehtava: ");
 			int demo = lukija.nextInt();
 			lukija.nextLine();
+			System.out.println("------------------------");
 			if (demo == 1){
 				String s1 = args[0];
 				String s2 = args[1];
@@ -64,7 +65,7 @@ public class Demo1{
 				int c = lukija.nextInt();
 				double disk = b*b-4*a*c;
 				System.out.println("------------------------");
-				if (disk >= 0){
+				if (disk >= 0 && a != 0){
 					System.out.println("Juuri no. 1: " + (-b+Math.sqrt(disk))/(2*a));
 					System.out.println("Juuri no. 2: " + (-b-Math.sqrt(disk))/(2*a));
 				}else{System.out.println("Kahta reallijuurta ei loytynyt");}
@@ -76,21 +77,20 @@ public class Demo1{
 				String b = lukija.nextLine();
 				int blen = b.length();
 				String c = new String();
-				for (int i = 0; i < a.length(); i++){
-					if (i < (a.length()-blen)){
+				for (int i = 0; i < a.length();){
+					if (i <= (a.length()-blen)){
 						if (a.substring(i,i+blen).equals(b)){
-							c = c + a.substring(i,i+blen).toUpperCase();
-							i++;
+							c += a.substring(i,i+blen).toUpperCase();
+							i += blen;
 						}
-						else{c = c + a.charAt(i);}
+						else{c += a.charAt(i);i++;}
 					}
-					else{c = c + a.charAt(i);}				
+					else{c += a.charAt(i);i++;}				
 				}
+				System.out.println("------------------------");
 				System.out.println(c);
 			}
-			else{
-				System.out.println("Etsimaasi demoa ei loytynyt. Yrita uudelleen.");
-			}
+			else{System.out.println("Etsimaasi demoa ei loytynyt. Yrita uudelleen.");}
 			lukija.close();
 		}
 		catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!");}

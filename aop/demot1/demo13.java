@@ -1,3 +1,4 @@
+
 import java.util.Random;
 
 public class demo13 {
@@ -31,5 +32,8 @@ public class demo13 {
 	}
 }
 
+//Johtopäätökset kontrolliprinttien perusteella:
+
 //s.length() maksimiarvo on 3 ja min 1 --> epäonnistuu varmasti, kun satunnaisluku > 3 tai 0, jolloin s.length()=1.
-//Erikoistapauksena s.lenght() voi saada arvon 4, jos satunnaismuuttuja >= 10. Algoritmi epäonnistuu tällöinkin
+//Erikoistapauksena s.lenght() voi saada arvon 4, jos satunnaismuuttuja >= 10. Algoritmi joka tapauksessa epäonnistuu tällöin
+//Mikä on tämän koodin tarkoitus? - Ei mitään käryä
