@@ -29,7 +29,11 @@ public class demot_aio{
 				System.out.print("Syota merkkijono: ");
 				String m = re.nextLine();
 				System.out.println("------------------------");
-				
+				String c;
+				for (int i = 0; i <= m.length();i++){
+					c += (char)((int)m.charAt(i).toLowercase()+1);
+				}
+				System.out.println(c);
 			}
 			else if (demo == 3){
 				System.out.print("Syota pariton positiivinen kokonaisluku: ");
