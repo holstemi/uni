@@ -7,7 +7,7 @@
 import java.util.Scanner;
 /**
  *
- * Iikka Luoma-aho 605814
+ *
  */
 public class Demo6 {
 
