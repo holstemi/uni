@@ -28,10 +28,18 @@ public class demot_aio{
 			else if (demo == 2){
 				System.out.print("Syota merkkijono: ");
 				String m = re.nextLine();
+				System.out.print("Syota numero: ");
+				int e = re.nextInt();
 				System.out.println("------------------------");
 				String c;
 				for (int i = 0; i <= m.length();i++){
-					c += (char)((int)m.charAt(i).toLowercase()+1);
+					if ((int)m.charAt(i).toLowercase()+e < 123 && (int)m.charAt(i).toLowercase()+e > 96){
+						c += (char)((int)m.charAt(i).toLowercase()+e);
+					}
+					else if ((int)m.charAt(i).toLowercase()+e > 122){
+						c += (char)((int)m.charAt(i).toLowercase()+e-25);
+					}
+					else{System.out.println("Syottamasi merkki ei ollut kirjain.");}
 				}
 				System.out.println(c);
 			}
