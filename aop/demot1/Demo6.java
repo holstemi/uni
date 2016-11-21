@@ -15,7 +15,6 @@ public class Demo6 {
      * @param args tulostaa sanan ja muokkaa sitä tehtävänannon mukaan
      */
     public static void main(String[] args) {
-        try{
             
         
         Scanner lukija = new Scanner(System.in);
@@ -30,9 +29,11 @@ public class Demo6 {
                 if (a.substring(i,i+blen).equals(b)){
                     c = c + a.substring(i,i+blen).toUpperCase();
                     i++;
-  }
-                    else{c = c + a.charAt(i);}
-  }
+                       }
+                    else{
+                        c = c + a.charAt(i);
+                            }
+                     }
             else{
                 c = c + a.charAt(i);
             }    
@@ -40,10 +41,6 @@ public class Demo6 {
     
         System.out.println(c);
  lukija.close();  
-}
-        
-  catch(Exception e){
-                    System.out.println("Jokin meni pieleen, yrita uudelleen!");
-                }
+
 }
 }
