@@ -6,7 +6,7 @@
 
 /**
  *
- * Iikka Luoma-aho 605814
+ * 
  */
 import java.util.Scanner;
 public class Demo5 {
