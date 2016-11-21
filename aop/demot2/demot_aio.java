@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.lang.Math;
 
 public class demot_aio{
 	
@@ -33,11 +32,13 @@ public class demot_aio{
 				System.out.println("------------------------");
 				String c;
 				for (int i = 0; i <= m.length();i++){
-					if ((int)m.charAt(i).toLowercase()+e < 123 && (int)m.charAt(i).toLowercase()+e > 96){
-						c += (char)((int)m.charAt(i).toLowercase()+e);
-					}
-					else if ((int)m.charAt(i).toLowercase()+e > 122){
-						c += (char)((int)m.charAt(i).toLowercase()+e-25);
+					if ((int)m.charAt(i).toLowercase() <= 122 && (int)m.charAt(i).toLowercase() >= 97){
+						if ((int)m.charAt(i).toLowercase()+e > 122){
+							c += (char)((int)m.charAt(i).toLowercase()+e-25);
+						}
+						else{
+							c += (char)((int)m.charAt(i).toLowercase()+e);
+						}
 					}
 					else{System.out.println("Syottamasi merkki ei ollut kirjain.");}
 				}
