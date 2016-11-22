@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class demot_aio{
 	
-	public static int fibonacci(int n){
+	public static int fibonacci(int n){ //fibonaaccin luvun laskeva metodi
 		if (n <= 1){return 1;}
 		else {return (fibonacci(n-1) + fibonacci(n-2));}
 	}			
 
 	public static void main(String[] args){
-		//try{
+		try{
 			Scanner re = new Scanner(System.in);
 			System.out.print("Valitse demotehtava: ");
 			int demo = re.nextInt();
@@ -31,7 +31,7 @@ public class demot_aio{
 				System.out.println("------------------------");
 				String c = "";
 				for (int i = 0; i < m.length();i++){
-					if ((int)Character.toLowerCase(m.charAt(i)) <= 122 && (int)Character.toLowerCase(m.charAt(i)) >= 97){
+					if ((int)Character.toLowerCase(m.charAt(i)) <= 122 && (int)Character.toLowerCase(m.charAt(i)) >= 97){ //tarkistetaaan etta syotetty merkki on kirjain ASCII -taulukossa
 						if ((int)Character.toLowerCase(m.charAt(i)+e%26) > 122){
 							c += (char)((int)Character.toLowerCase(m.charAt(i))+e%26-26);
 						}
@@ -49,7 +49,7 @@ public class demot_aio{
 				int k = re.nextInt();
 				System.out.println("------------------------");
 				if (k%2 != 0 && k > 0){
-					for (int i = 0; i <= k/2; i++){
+					for (int i = 0; i <= k/2; i++){ //tulostetaan salmiakin ylaosa
 						for (int z = 0; z < (k/2-i); z++){
 							System.out.print(" ");
 						}
@@ -61,7 +61,7 @@ public class demot_aio{
 						}
 						System.out.println();
 					}
-					for (int i = k/2; i > 0; i--){
+					for (int i = k/2; i > 0; i--){ //tulostetaan salmiakin alaosa
 						for (int z = k/2+1; z > i; z--){
 							System.out.print(" ");
 						}
@@ -79,7 +79,14 @@ public class demot_aio{
 				System.out.print("Syota merkkijono: ");
 				String s = re.nextLine();
 				System.out.println("------------------------");
-				
+				String s2 = null;				
+
+				for (int i = 0; i > s.length(); i++){
+					for (int j = 0; j > s.length(); j++){
+						
+					}
+				}
+				System.out.println("Uusi merkkijono: " + s);
 			}
 			else if (demo == 5){
 				System.out.print("Syota merkkijono A: ");
@@ -96,9 +103,7 @@ public class demot_aio{
 			}
 			else{System.out.println("Etsimaasi demoa ei loytynyt. Yrita uudelleen.");}
 			re.close();
-		//}
-		//catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!");}
-	
-
-}
+		}
+		catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!");}
+	}
 }
