@@ -8,7 +8,7 @@ public class demot_aio{
 	}			
 
 	public static void main(String[] args){
-		try{
+		//try{
 			Scanner re = new Scanner(System.in);
 			System.out.print("Valitse demotehtava: ");
 			int demo = re.nextInt();
@@ -18,10 +18,7 @@ public class demot_aio{
 				System.out.print("Syota kokonaisluku n: ");
 				int f = re.nextInt();
 				System.out.println("------------------------");
-				
-		
-
-				for (int i = 0; i <= f; i++){
+				for (int i = 0; i < f; i++){
 					System.out.print(fibonacci(i) + " ");
 					System.out.print((i+1)*(i+1) + " ");
 				}
@@ -32,19 +29,20 @@ public class demot_aio{
 				System.out.print("Syota numero: ");
 				int e = re.nextInt();
 				System.out.println("------------------------");
-				String c;
-				//for (int i = 0; i <= m.length();i++){
-				//	if ((int)m.charAt(i).toLowercase() <= 122 && (int)m.charAt(i).toLowercase() >= 97){
-				//		if ((int)m.charAt(i).toLowercase()+e > 122){
-				//			c += (char)((int)m.charAt(i).toLowercase()+e-25);
-				//		}
-				//		else{
-				//			c += (char)((int)m.charAt(i).toLowercase()+e);
-				//		}
-				//	}
-				//	else{System.out.println("Syottamasi merkki ei ollut kirjain.");}
-				//}
-				//System.out.println(c);
+				String c = "";
+				for (int i = 0; i < m.length();i++){
+					if ((int)Character.toLowerCase(m.charAt(i)) <= 122 && (int)Character.toLowerCase(m.charAt(i)) >= 97){
+						if ((int)Character.toLowerCase(m.charAt(i)+e%26) > 122){
+							c += (char)((int)Character.toLowerCase(m.charAt(i))+e%26-26);
+						}
+						else{
+							c += (char)((int)Character.toLowerCase(m.charAt(i))+e%26);
+						}
+					}
+					else if ((int)Character.toLowerCase(m.charAt(i)) == 32){c += " ";}
+					else{System.out.println("Syottamasi merkki ei ollut kirjain.");}
+				}
+				System.out.println(c);
 			}
 			else if (demo == 3){
 				System.out.print("Syota pariton positiivinen kokonaisluku: ");
@@ -79,8 +77,8 @@ public class demot_aio{
 			}
 			else{System.out.println("Etsimaasi demoa ei loytynyt. Yrita uudelleen.");}
 			re.close();
-		}
-		catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!");}
+		//}
+		//catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!");}
 	
 
 }
