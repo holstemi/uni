@@ -23,7 +23,7 @@ public class demot_aio{
 
 				for (int i = 0; i <= f; i++){
 					System.out.print(fibonacci(i) + " ");
-					System.out.print(i*i + " ");
+					System.out.print((i+1)*(i+1) + " ");
 				}
 			}
 			else if (demo == 2){
