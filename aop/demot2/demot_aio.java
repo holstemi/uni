@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class demot_aio{
 	
+	public static int fibonacci(int n){
+		if (n <= 1){return 1;}
+		else {return (fibonacci(n-1) + fibonacci(n-2));}
+	}			
+
 	public static void main(String[] args){
 		try{
 			Scanner re = new Scanner(System.in);
@@ -11,15 +16,12 @@ public class demot_aio{
 			System.out.println("------------------------");
 			if (demo == 1){
 				System.out.print("Syota kokonaisluku n: ");
-				int n = re.nextInt();
+				int f = re.nextInt();
 				System.out.println("------------------------");
 				
-				public static int fibonacci(int n){
-					if (n <= 1){return n;}
-					else {return fibonacci(n-1) + fibonacci(n-2);}
-				}
-				
-				for (int i = 0; i <= n; i++){
+		
+
+				for (int i = 0; i <= f; i++){
 					System.out.print(fibonacci(i) + " ");
 					System.out.print(i*i + " ");
 				}
@@ -31,18 +33,18 @@ public class demot_aio{
 				int e = re.nextInt();
 				System.out.println("------------------------");
 				String c;
-				for (int i = 0; i <= m.length();i++){
-					if ((int)m.charAt(i).toLowercase() <= 122 && (int)m.charAt(i).toLowercase() >= 97){
-						if ((int)m.charAt(i).toLowercase()+e > 122){
-							c += (char)((int)m.charAt(i).toLowercase()+e-25);
-						}
-						else{
-							c += (char)((int)m.charAt(i).toLowercase()+e);
-						}
-					}
-					else{System.out.println("Syottamasi merkki ei ollut kirjain.");}
-				}
-				System.out.println(c);
+				//for (int i = 0; i <= m.length();i++){
+				//	if ((int)m.charAt(i).toLowercase() <= 122 && (int)m.charAt(i).toLowercase() >= 97){
+				//		if ((int)m.charAt(i).toLowercase()+e > 122){
+				//			c += (char)((int)m.charAt(i).toLowercase()+e-25);
+				//		}
+				//		else{
+				//			c += (char)((int)m.charAt(i).toLowercase()+e);
+				//		}
+				//	}
+				//	else{System.out.println("Syottamasi merkki ei ollut kirjain.");}
+				//}
+				//System.out.println(c);
 			}
 			else if (demo == 3){
 				System.out.print("Syota pariton positiivinen kokonaisluku: ");
@@ -76,8 +78,10 @@ public class demot_aio{
 				System.out.print("Ks. tiedosto demo26.java");
 			}
 			else{System.out.println("Etsimaasi demoa ei loytynyt. Yrita uudelleen.");}
-			lukija.close();
+			re.close();
 		}
 		catch(Exception e){System.out.println("Jokin meni pieleen, yrita uudelleen!");}
-	}
+	
+
+}
 }
