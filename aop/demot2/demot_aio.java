@@ -42,17 +42,36 @@ public class demot_aio{
 					else if ((int)Character.toLowerCase(m.charAt(i)) == 32){c += " ";}
 					else{System.out.println("Syottamasi merkki ei ollut kirjain.");}
 				}
-				System.out.println(c);
+				System.out.println("Salakirjoitettu merkkijono: " + c);
 			}
 			else if (demo == 3){
 				System.out.print("Syota pariton positiivinen kokonaisluku: ");
 				int k = re.nextInt();
 				System.out.println("------------------------");
 				if (k%2 != 0 && k > 0){
-					for (int i = 0; i <= k; i++){
-						for (int j = 0; j <= 2*i-1; j++){
+					for (int i = 0; i <= k/2; i++){
+						for (int z = 0; z < (k/2-i); z++){
+							System.out.print(" ");
+						}
+						for (int g = 0; g <= 2*i; g++){
 							System.out.print("*");
 						}
+						for (int d = 0; d < (k/2-i); d++){
+							System.out.print(" ");
+						}
+						System.out.println();
+					}
+					for (int i = k/2; i > 0; i--){
+						for (int z = k/2+1; z > i; z--){
+							System.out.print(" ");
+						}
+						for (int z = k/2+1; z > ((k/2+2)-2*i); z--){
+							System.out.print("*");
+						}
+						for (int z = k/2+1; z > i; z--){
+							System.out.print(" ");
+						}
+						System.out.println();
 					}
 				}else{System.out.println("Syottamasi luku ei ole parillinen ja/tai postiivinen kokonaisluku.");}
 			}
