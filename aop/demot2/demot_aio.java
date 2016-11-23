@@ -79,14 +79,19 @@ public class demot_aio{
 				System.out.print("Syota merkkijono: ");
 				String s = re.nextLine();
 				System.out.println("------------------------");
-				String s2 = null;				
+				String s2 = "";				
 
-				for (int i = 0; i > s.length(); i++){
-					for (int j = 0; j > s.length(); j++){
-						
+				for (int i = 0; i < s.length(); i++){
+					System.out.println(s2.indexOf(s.charAt(i)));
+					if (s2.indexOf(s.charAt(i)) == -1){
+						for (int j = 0; j < s.length(); j++){
+							if (s.charAt(i) == s.charAt(j)){
+								s2 += s.charAt(j);
+							}
+						}						
 					}
 				}
-				System.out.println("Uusi merkkijono: " + s);
+				System.out.println("Uusi merkkijono: " + s2);
 			}
 			else if (demo == 5){
 				System.out.print("Syota merkkijono A: ");
