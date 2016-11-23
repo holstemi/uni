@@ -1,3 +1,5 @@
+import java.lang.Math
+
 public class demo26 {
 	
 	public static void main(String[] args){
@@ -16,29 +18,19 @@ public class demo26 {
 		System.out.println(Math.sqrt(a));
 		System.out.println("----");
 		
-		int temp = 0;
+		int temp = a;
 		temp = a;
 		a = b%a;
 		b = temp;
-		
-		if(a > 0){
-			temp = a;
-			a = b%a;
-			b = temp;
-		}
-		if(a > 0){
-			temp = a;
-			a = b%a;
-			b = temp;
-		}
-		if(a > 0){
-			temp = a;
-			a = b%a;
-			b = temp;
+		for (int i = 0; i < 3; i++){
+			if(a > 0){
+				temp = a;
+				a = b%a;
+				b = temp;
+			}
 		}
 		
 		temp = b;
-		
 		System.out.println(b);
 	
 		if(temp > 0){
