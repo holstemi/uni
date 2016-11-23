@@ -5,7 +5,30 @@ public class demot_aio{
 	public static int fibonacci(int n){ //fibonaaccin luvun laskeva metodi
 		if (n <= 1){return 1;}
 		else {return (fibonacci(n-1) + fibonacci(n-2));}
-	}			
+	}
+
+	public static String sis(String s){
+		String s2 = "";
+		for (int i = 0; i < s.length(); i++){
+			if (s2.indexOf(s.charAt(i)) == -1){ //tarkistetaan onko sen hetkinen merkki jo uudessa jonossa
+				for (int j = 0; j < s.length(); j++){
+					if (s.charAt(i) == s.charAt(j)){
+						s2 += s.charAt(j);
+					}
+				}						
+			}
+		}
+		return s2;
+	}
+
+	public static String unic(String a, String b, String s){
+		String g = "";
+		for (int i = 0; i < s.length(); i++){
+			if (a.indexOf(s.charAt(i)) == -1 && b.indexOf(s.charAt(i)) == -1){
+				g += s.charAt(i);
+			}
+		}return g;
+	}
 
 	public static void main(String[] args){
 		try{
@@ -79,18 +102,7 @@ public class demot_aio{
 				System.out.print("Syota merkkijono: ");
 				String s = re.nextLine();
 				System.out.println("------------------------");
-				String s2 = "";				
-
-				for (int i = 0; i < s.length(); i++){
-					if (s2.indexOf(s.charAt(i)) == -1){ //tarkistetaan onko sen hetkinen merkki jo uudessa jonossa
-						for (int j = 0; j < s.length(); j++){
-							if (s.charAt(i) == s.charAt(j)){
-								s2 += s.charAt(j);
-							}
-						}						
-					}
-				}
-				System.out.println("Uusi merkkijono: " + s2);
+				System.out.println("Uusi merkkijono: " + sis(s));
 			}
 			else if (demo == 5){
 				System.out.print("Syota merkkijono A: ");
@@ -100,7 +112,9 @@ public class demot_aio{
 				System.out.print("Syota merkkijono C: ");
 				String c = re.nextLine();
 				System.out.println("------------------------");
-				
+				System.out.println("Uniikit merkit merkkijonossa A: " + unic(b,c,a));
+				System.out.println("Uniikit merkit merkkijonossa B: " + unic(a,c,b));
+				System.out.println("Uniikit merkit merkkijonossa C: " + unic(a,b,c));
 			}
 			else if (demo == 6){
 				System.out.print("Ks. tiedosto demo26.java");
