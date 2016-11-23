@@ -7,7 +7,7 @@ public class demot_aio{
 		else {return (fibonacci(n-1) + fibonacci(n-2));}
 	}
 
-	public static String sis(String s){
+	public static String sis(String s){ //jarjestaa stringin kirjaimet esiintymisjarjestyksen mukaan
 		String s2 = "";
 		for (int i = 0; i < s.length(); i++){
 			if (s2.indexOf(s.charAt(i)) == -1){ //tarkistetaan onko sen hetkinen merkki jo uudessa jonossa
@@ -21,7 +21,7 @@ public class demot_aio{
 		return s2;
 	}
 
-	public static String unic(String a, String b, String s){
+	public static String unic(String a, String b, String s){ //tarkistetaan sisaltaako merkkijono s, joko a:n tai b:n merkkeja
 		String g = "";
 		for (int i = 0; i < s.length(); i++){
 			if (a.indexOf(s.charAt(i)) == -1 && b.indexOf(s.charAt(i)) == -1){
@@ -96,7 +96,7 @@ public class demot_aio{
 						}
 						System.out.println();
 					}
-				}else{System.out.println("Syottamasi luku ei ole parillinen ja/tai postiivinen kokonaisluku.");}
+				}else{System.out.println("Syottamasi luku ei ollut pariton ja/tai postiivinen kokonaisluku.");}
 			}
 			else if (demo == 4){
 				System.out.print("Syota merkkijono: ");
