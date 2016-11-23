@@ -82,8 +82,7 @@ public class demot_aio{
 				String s2 = "";				
 
 				for (int i = 0; i < s.length(); i++){
-					System.out.println(s2.indexOf(s.charAt(i)));
-					if (s2.indexOf(s.charAt(i)) == -1){
+					if (s2.indexOf(s.charAt(i)) == -1){ //tarkistetaan onko sen hetkinen merkki jo uudessa jonossa
 						for (int j = 0; j < s.length(); j++){
 							if (s.charAt(i) == s.charAt(j)){
 								s2 += s.charAt(j);
