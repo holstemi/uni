@@ -1,4 +1,5 @@
-import java.lang.Math
+import java.lang.Math;
+import java.util.Scanner;
 
 public class demo26 {
 	
@@ -15,31 +16,26 @@ public class demo26 {
 		System.out.println("Kiitos! Anna seuraava luku:");
 		int b = s.nextInt();
 		
-		System.out.println(Math.sqrt(a));
+		System.out.println(Math.sqrt(a)); //tulostetaan ensimmaisen luvun neliojuuri
 		System.out.println("----");
 		
-		int temp = a;
-		temp = a;
-		a = b%a;
-		b = temp;
-		for (int i = 0; i < 3; i++){
+		int temp = 0;
+
+		for (int i = 0; i < 4; i++){
 			if(a > 0){
-				temp = a;
-				a = b%a;
-				b = temp;
+				temp = a; //tallennetaan a:n arvo valiaikaismuuttujaan
+				a = b%a; //a on b:n jakojaannos a:lla
+				b = temp; //b saa a:n alkuperaisen arvon
 			}
 		}
 		
 		temp = b;
 		System.out.println(b);
 	
-		if(temp > 0){
-			System.out.println(--temp);
-		}
-		if(temp > 0){
-			int luku = temp;
-			luku = luku-1;
-			System.out.println(luku);
+		for (int i = 0; i < 2;i++){
+			if(temp > 0){
+				System.out.println(--temp);
+			}
 		}
 		if(temp > 0){
 			temp = temp-2;
@@ -51,11 +47,8 @@ public class demo26 {
 			temp--;
 		}
 		if(temp > 0){
-			System.out.println(temp);			
-		}
-		if(temp > 0){
-			temp -= 1;
 			System.out.println(temp);
+			System.out.println(--temp);
 		}
 	}
 }
