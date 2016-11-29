@@ -1,6 +1,6 @@
 mport java.util.Scanner;
 
-public class demot_aio{
+public class demot3_aio{
 	
 	public static boolean onkoPalindromi(String m){
 		String g = "";
