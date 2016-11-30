@@ -37,28 +37,20 @@ public class demot3_aio{
 			else if (demo == 5){
 				System.out.print("Syota merkkijono: ");
 				String s = re.nextLine();
-				System.out.println(s.length()); //tulostetaan merkkien lukumaara
-				for (int i = 0; i < s.length(); i++){ //tulostetaan merkkien lukumaaran verran asterikseja
-					System.out.print("*");
-				}
-				System.out.println();
+				int y = s.length();
+				System.out.println(y); //tulostetaan merkkien lukumaara
+				tulostaRiskeja(y); //tulostetaan y verran asterikseja
 				int kpl = 0;
-				for (int i = 0; i < s.length(); i++){
-					for (int j = 0; j < s.length(); j++){
+				for (int i = 0; i < y; i++){
+					for (int j = 0; j < y; j++){
 						if (s.charAt(i) == s.charAt(j)){
 							kpl++;
 						}
 					}
-					for (int g = 0; g < kpl; g++){
-						System.out.print("*"); //tulostetaan kyseisen merkin esiintymisten lukumaaran verran asterikseja
-					}
+					tulostaRiskeja(kpl); //tulostetaan kpl verran asterikseja
 					kpl = 0;
-					System.out.println();
 				}
-				for (int i = 0; i < s.length(); i++){ //tulostetaan merkkien lukumaaran verran asterikseja
-					System.out.print("*");
-				}
-				System.out.println();
+				tulostaRiskeja(y); //tulostetaan y verran asterikseja
 			}
 			else if (demo == 6){
 				System.out.print("Syota merkkijono: ");
@@ -120,5 +112,12 @@ public class demot3_aio{
 			else { g += " ";}
 		}
 		return g;
+	}
+
+	public static void tulostaRiskeja(int x){
+		for (int i = 0; i < x; i++){ //tulostetaan x verran asterikseja
+			System.out.print("*");
+		}
+		System.out.println();
 	}
 }
