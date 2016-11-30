@@ -26,7 +26,14 @@ public class demot3_aio{
 			if ((int)Character.toLowerCase(m.charAt(i)) <= 122 && (int)Character.toLowerCase(m.charAt(i)) >= 97){
 				g += m.charAt(i);
 			}
-			else if (ok.includes(m.charAt(i))){
+			boolean contains = false;
+			for (char c : charArray) {
+    				if (c == 'q') {
+        				contains = true;
+        				break;
+    				}
+			}
+			if (!contains){
 				g += m.charAt(i);
 			}
 			else { g += " ";}
