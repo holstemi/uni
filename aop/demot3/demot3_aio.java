@@ -11,6 +11,7 @@ public class demot3_aio{
 			int demo = re.nextInt();
 			re.nextLine();
 			System.out.println("------------------------");
+
 			if (demo == 1){
 				System.out.print("Syota merkkijono: ");
 				String s = re.nextLine();
@@ -23,7 +24,7 @@ public class demot3_aio{
 				System.out.print("Syota nopan tahkojen lukumaara: ");
 				int b = re.nextInt();
 				System.out.println("------------------------");
-				System.out.println("Nopanheittojen summa: "+heitaNoppaa(a,b));
+				System.out.println("Nopanheittojen summa: " + heitaNoppaa(a,b));
 			}
 			else if (demo == 3){
 				System.out.print("Ks. tiedosto demo33.java");
@@ -78,9 +79,9 @@ public class demot3_aio{
 	}
 	
 	public static boolean onkoPalindromi(String m){
-		String g = new StringBuilder(m).reverse().toString();
+		String g = new StringBuilder(m).reverse().toString(); //kaantaa alkuperaisen merkkijonon ympari uuteen muuttujaan
 		int ml = m.length();
-		if (m.equals(g)){
+		if (m.equals(g)){ //on palindromi jos g ja m ovat samat merkkijonot
 			return true;
 		}
 		else{return false;}
@@ -94,20 +95,20 @@ public class demot3_aio{
 
 	public static String poistaErikoismerkit (String m){
 		String g = "";
-		char[] ok = {'1','2','3','4','5','6','7','8','9','0','ä','Ä','ö','Ö','å','Å'};
+		char[] ok = {'1','2','3','4','5','6','7','8','9','0','ä','Ä','ö','Ö','å','Å'}; //erikoisemmat merkit
 		for (int i = 0; i < m.length(); i++){
 			boolean contains = false;
-			for (char c : ok) {
+			for (char c : ok) { //kaydaan lapi lista ok
     				if (c == m.charAt(i)) {
         				contains = true;
         				break;
     				}
 			}
 			if (contains){
-				g += m.charAt(i);
+				g += m.charAt(i); //jos merkki erikisempien merkkien listassa
 			}
 			else if ((int)Character.toLowerCase(m.charAt(i)) <= 122 && (int)Character.toLowerCase(m.charAt(i)) >= 97){
-				g += m.charAt(i);
+				g += m.charAt(i); //jos merkki on valilla a-z
 			}
 			else { g += " ";}
 		}
