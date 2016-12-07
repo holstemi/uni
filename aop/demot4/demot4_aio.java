@@ -42,15 +42,33 @@ public class demot4_aio{
 				int[] taulu1 = new int[rd.nextInt(20)];
 				int[] taulu2 = new int[rd.nextInt(20)];
 				for(int i = 0; i < taulu1.length;i++){
-					int y = rd.nextInt(200);
-					if(y%2 = 0 && y%4 != 0){
-						taulu1[i] = y;
+					int y = 0;
+					for(int j = 0; j < 200; j++){
+						y = rd.nextInt(200);
+						if (y%2 == 0){
+							if(y%4 != 0){
+								break;
+							}
+						}
 					}
+					taulu1[i] = y;
 				}for(int i = 0; i < taulu2.length;i++){
 					int y = rd.nextInt(200);
-					if(y%2 = 0 && y%4 != 0){
+					if(y%2 == 0 && y%4 != 0){
 						taulu2[i] = y;
 					}
+				}
+				if(taulu1.length == taulu2.length){
+					boolean g = true;
+					for (int i = 0; i < taulu1.length; i++){
+						if(taulu1[i] != taulu2[i]){g = false; break;}
+					}
+					System.out.println(g);
+				}
+				else{
+					if(taulu1.length < taulu2.length){tulostaTaulu(taulu1);}
+					else{tulostaTaulu(taulu2);}
+
 				}
 			}
 			else if (demo == 6){
