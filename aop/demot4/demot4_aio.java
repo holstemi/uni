@@ -16,9 +16,12 @@ public class demot4_aio{
 			Random rd = new Random();
 
 			if (demo == 1){
+				System.out.print("Anna luku johon asti lasketaan: ");
 				int g = re.nextInt();
+				System.out.print("Anna taulukon solujen maara: ");
 				int x = re.nextInt();
 				int[] taulu = new int[x];
+				System.out.println("------------------------");
 				tulostaTaulu(lisaaTaulukkoon(taulu,g));
 			}
 			else if (demo == 2){
@@ -27,16 +30,16 @@ public class demot4_aio{
 				tulostaTaulu(vertaaTaulu(a,b));
 			}
 			else if (demo == 3){
-				int[] taulu = new int[rd.nextInt(200)];
+				int[] taulu = new int[rd.nextInt(20)];
 				for(int i = 0; i < taulu.length;i++){
-					taulu[i] = rd.nextInt(200);
+					taulu[i] = rd.nextInt(20);
 				}
 				int[] jalkeen = satunnainenMiinus(rd,taulu);
 				vertaileTauluja(taulu,jalkeen);
 
 			}
 			else if (demo == 4){
-				System.out.print("Ks. tiedosto demo44.java");
+				System.out.println("Ks. tiedosto demo44.java");
 			}
 			else if (demo == 5){
 				int[] taulu1 = new int[rd.nextInt(20)];
@@ -52,10 +55,11 @@ public class demot4_aio{
 						}
 					}
 					taulu1[i] = y;
-				}for(int i = 0; i < taulu2.length;i++){
+				}for(int i = 0; i < taulu2.length;){
 					int y = rd.nextInt(200);
 					if(y%2 == 0 && y%4 != 0){
 						taulu2[i] = y;
+						i++;
 					}
 				}
 				if(taulu1.length == taulu2.length){
@@ -111,8 +115,12 @@ public class demot4_aio{
 	}
 
 	public static void vertaileTauluja(int[] before, int[] after){
+		System.out.print("Ennen: ");
 		tulostaTaulu(before);
+		System.out.print("Jalkeen: ");
 		tulostaTaulu(after);
+		System.out.println("------------------------");
+		System.out.println("-1:lla korvatut luvut: ");
 		for (int i = 0; i < after.length; i++){
 			if (before[i] != after[i]){System.out.println(before[i]);}
 		}
