@@ -141,8 +141,9 @@ public class demot4_aio{
 		}
 		else{
 			int margin = (taulu.length - m.length())/2;
+			int keski = (taulu.length)/2;
 			for (int i = 0; i < m.length(); i++){
-				taulu[0][margin+i][0] = m.charAt(i);
+				taulu[keski][margin+i][keski] = m.charAt(i);
 			}
 			return taulu;
 		}
