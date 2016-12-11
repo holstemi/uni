@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class tka {
+public class tka { //yleisesti ottaen: ohjelmassa kaytetty nimeamiskaytanto on todella huono koodin luettavuuden kannalta
 
 	public static int rvtra = 11;	//jokseenkin turha yleien muuttuja, koska sita kaytetaan koodissa vain kerran
 		
