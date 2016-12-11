@@ -72,7 +72,9 @@ public class demot4_aio{
 				}
 			}
 			else if (demo == 6){
-				
+				char[][][] taulu3d = new char[5][5][5];
+				String merkkijono = "moi";
+				keskitaMerkkijono(taulu3d, merkkijono);
 			}
 			else{System.out.println("Etsimaasi demoa ei loytynyt. Yrita uudelleen.");}
 			re.close();
@@ -131,5 +133,18 @@ public class demot4_aio{
 			else{System.out.print(t[i]);}
 		}
 		System.out.println();
+	}
+	
+	public static char[][][] keskitaMerkkijono (char[][][] taulu, String m){
+		if (taulu.length != taulu[0].length || taulu[0].length != taulu[0][0].length || m.length() > taulu.length){
+			return taulu;
+		}
+		else{
+			int margin = (taulu.length - m.length())/2;
+			for (int i = 0; i < m.length(); i++){
+				taulu[0][margin+i][0] = m.charAt(i);
+			}
+			return taulu;
+		}
 	}
 }
