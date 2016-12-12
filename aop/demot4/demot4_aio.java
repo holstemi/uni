@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.StringBuffer;
 import java.util.Random;
-
+import java.util.Arrays;
 import java.util.ArrayList;
 
 public class demot4_aio{
@@ -76,7 +76,7 @@ public class demot4_aio{
 				}
 			}
 			else if (demo == 6){
-				char[][][] taulu3d = new char[5][5][5];
+				char[][][] taulu3d = new char[8][8][8];
 				String merkkijono = "moikka";
 				keskitaMerkkijono(taulu3d, merkkijono);
 				tulosta3d(taulu3d);
@@ -137,10 +137,7 @@ public class demot4_aio{
 	}
 
 	public static void tulostaTaulu(int[] t){
-		for (int i = 0; i < t.length; i++){
-			if (i != t.length -1){System.out.print(t[i]+",");}
-			else{System.out.print(t[i]);}
-		}
+		System.out.println(Arrays.toString(t));
 		System.out.println();
 	}
 	
@@ -161,11 +158,7 @@ public class demot4_aio{
 	public static void tulosta3d (char[][][] a){
 		for (int i = 0; i < a.length; i++){
 			for (int j = 0; j < a[0].length; j++){
-				for (int k = 0; k < a[0][0].length; k++){
-					if(k != a[0][0].length - 1){System.out.print(a[i][j][k]+",");}
-					else{System.out.print(a[i][j][k]);}
-				}
-				System.out.print("  ");
+				System.out.print(Arrays.toString(a[i][j]));
 			}
 			System.out.println();
 		}
