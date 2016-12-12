@@ -79,6 +79,7 @@ public class demot4_aio{
 				char[][][] taulu3d = new char[5][5][5];
 				String merkkijono = "moi";
 				keskitaMerkkijono(taulu3d, merkkijono);
+				tulosta3d(taulu);
 			}
 			else{System.out.println("Etsimaasi demoa ei loytynyt. Yrita uudelleen.");}
 			re.close();
@@ -154,6 +155,18 @@ public class demot4_aio{
 				taulu[keski][margin+i][keski] = m.charAt(i);
 			}
 			return taulu;
+		}
+	}
+	
+	public static void tulosta3d (char[][][] a){
+		for (int i = 0; i < a.length){
+			for (int j = 0; j < a[0].length; j++){
+				for (int k = 0; k < a[0][0].length; k++){
+					System.out.print(a[i][j][k]+",");
+				}
+				System.out.print("  ");
+			}
+			System.out.println();
 		}
 	}
 }
