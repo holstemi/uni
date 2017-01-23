@@ -1,0 +1,18 @@
+public class Opiskelija{
+	String nimi;
+	int opiskelijanumero;
+	ArrayList<Integer> tulokset;
+}
+
+public class Kurssi{
+	String tila;
+	String luennoitsija;
+	String kurssiseloste;
+	String opetustila;
+	int tuntienMaara;
+	int opintopisteita;
+	
+	public void lisaaOpiskelija(param){}
+	public void poistaOpiskelija(param){}
+	public int annaArvosana(param){}
+}
