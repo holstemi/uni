@@ -11,13 +11,14 @@ class linkitettyLista{
 
 	public void asetaLista(ArrayList<Integer> arvo){
 		this.arvo = arvo;
-		for (int i = 0; i < arvo.size()-1; i++){
+		for (int i = 0; i < arvo.size()-2; i++){
 			index.add(i+1);
 		}
+		index.add(arvo.size()-2,0);
 	}
 
-	public void lisaaArvo(int arvo, int index){
-		this.arvo.add(arvo,index);
+	public void lisaaArvo(int index, int arvo){
+		this.arvo.add(index,arvo);
 		this.index.add(index, this.index.get(index-1));
 		this.index.set(index-1, index);	 
 	}
@@ -49,6 +50,9 @@ class linkitettyLista{
 	}
 	public ArrayList<Integer> annaLista(){
 		return arvo;	 
+	}
+	public ArrayList<Integer> annaIndex(){
+		return index;	 
 	} 
 
 }

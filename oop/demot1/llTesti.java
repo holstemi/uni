@@ -11,11 +11,14 @@ public class llTesti{
 		linkitettyLista ll = new linkitettyLista();
 		ll.asetaLista(testi);
 		testaa(ll.annaLista());
+		testaa(ll.annaIndex());
 		ll.poistaArvo(4);
 		print(ll.annaSeuraavaIndex(3));
 		testaa(ll.annaLista());
-		ll.lisaaArvo(3,2);
+		testaa(ll.annaIndex());
+		ll.lisaaArvo(3,8);
 		testaa(ll.annaLista());
+		testaa(ll.annaIndex());
 		print(ll.etsiArvo(7));
 	}
 
