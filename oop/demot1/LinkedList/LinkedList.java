@@ -29,15 +29,10 @@ class LinkedList{
         System.out.println(item + " added to the end of our LinkedList!");
     }
 	
-	public boolean addToIndex(int item, int index){ //add an item to a certain index of the list
-    	Node newNode = new Node(item);
-    	Node now = first;
-
-    	if(index > size || index < 1){
-    		System.out.println("Error: index out of bounds!");
-    		return false;
-    	}
-    	else{
+	public void addToIndex(int item, int index){ //add an item to a certain index of the list
+		if(checkIndex(index)){
+			Node newNode = new Node(item);
+			Node now = first;
     		for(int i = 0; i < index-1; i++){
     			now = now.next;
     		}
@@ -45,7 +40,6 @@ class LinkedList{
     		now.next = newNode;
     		size++;
     		System.out.println("Success! " + item + " added at index " + index);
-            return true;
     	}
     }
 	
@@ -66,13 +60,9 @@ class LinkedList{
         return false;
     }
 
-    public boolean deleteNodeAtIndex(int index){
-    	Node now = first;
-    	if(index > size || index < 1){
-    		System.out.println("Error: index out of bounds!");
-    		return false;
-    	}    	
-    	else{
+    public void deleteNodeAtIndex(int index){
+    	if(checkIndex(index)){
+			Node now = first;
     		for(int i = 0; i < index-1; i++){
     			now = now.next;
     		}
@@ -81,10 +71,41 @@ class LinkedList{
 			toBeKilled = null;
     		size--;
 			System.out.println("Success! Node at index " + index + " deleted.");
-    		return true;
     	}
     }
-
+	
+	public void findNodeAtIndex(int index){
+    	if(checkIndex(index)){
+			Node now = first;
+    		for(int i = 0; i < index; i++){
+    			now = now.next;
+    		}
+			System.out.println("Node at index contains: " + now.item);
+    	}
+    }
+	
+	public boolean findNodeWithData(int item){
+    	Node now = first;
+		int counter = 0;
+        while(now.next != null){
+            if(now.data == item){
+                System.out.println("Found a node containing " + item + " at index " + counter);
+                return true;
+            }
+            now = now.next;
+			counter++;
+        }
+        System.out.println("Error: No node found with given data!");
+        return false;
+    }
+	
+	public boolean checkIndex(int index){
+		if(index > size || index < 1){
+    		System.out.println("Error: index out of bounds!");
+    		return false;
+    	}
+		return true;
+	}
 }
 
 public class Node{
