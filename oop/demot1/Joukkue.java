@@ -13,4 +13,12 @@ public class Joukkue{
 			}
 		}
 	}
+	
+	public void tulostaJoukkue(){
+		for (Pelaaja x : pelaajat){
+			System.out.print(x.annaNimi());
+			System.out.print(x.annaNumero());
+			System.out.println(x.annaPelipaikka());
+		}
+	}
 }
