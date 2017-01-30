@@ -17,4 +17,4 @@ public class LinkedListTest{
 }
 
 
-//Crediz for hjalp: https://gist.github.com/akshaynagpal/14ee8b54cd018bd05b2a3c2432c818dc
+//Crediz for helpin understand: https://gist.github.com/akshaynagpal/14ee8b54cd018bd05b2a3c2432c818dc
