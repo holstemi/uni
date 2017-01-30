@@ -3,17 +3,18 @@ public class LinkedListTest{
 
     	LinkedList L = new LinkedList();
     	L.add(1);
-    	L.show();
+    	L.print();
     	L.add(2);
-    	L.show();
+    	L.print();
     	L.add(3);
-    	L.show();
+    	L.print();
     	L.deleteNodeWithData(2);
-    	L.show();
+    	L.print();
     	L.deleteNodeAtIndex(3);
-    	L.show();
+    	L.print();
     	L.deleteNodeAtIndex(1);
-    	L.show();
+    	L.print();
+	}
 }
 
 

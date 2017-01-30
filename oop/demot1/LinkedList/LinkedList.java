@@ -46,15 +46,15 @@ class LinkedList{
 	public boolean deleteNodeWithData(int item){
     	Node now = first;
         while(now.next != null){
-            if(now.next.data == item){
-		Node toBeKilled = now.next;
-                now.next = now.next.next;
-		toBeKilled = null;
-                size--;
-                System.out.println("Success! The first occurrence of a node with data " + item + " deleted.");
-                return true;
-            }
-            now = now.next;
+			if(now.next.data == item){
+				Node toBeKilled = now.next;
+				now.next = now.next.next;
+				toBeKilled = null;
+				size--;
+				System.out.println("Success! The first occurrence of a node with data " + item + " deleted.");
+				return true;
+			}
+			now = now.next;
         }
         System.out.println("Error: No node found with given data!");
         return false;
@@ -62,15 +62,15 @@ class LinkedList{
 
     public void deleteNodeAtIndex(int index){
     	if(checkIndex(index)){
-		Node now = first;
+			Node now = first;
     		for(int i = 0; i < index-1; i++){
     			now = now.next;
     		}
-		Node toBeKilled = now.next;
+			Node toBeKilled = now.next;
     		now.next = now.next.next;
-		toBeKilled = null;
+			toBeKilled = null;
     		size--;
-		System.out.println("Success! Node at index " + index + " deleted.");
+			System.out.println("Success! Node at index " + index + " deleted.");
     	}
     }
 	
@@ -85,19 +85,19 @@ class LinkedList{
     	}
 	
 	public boolean findNodeWithData(int item){
-    		Node now = first;
+    	Node now = first;
 		int counter = 0;
-        	while(now.next != null){
-            		if(now.data == item){
-                		System.out.println("Found a node containing " + item + " at index " + counter);
-                	return true;
-            		}
-            		now = now.next;
+        while(now.next != null){
+           	if(now.data == item){
+               	System.out.println("Found a node containing " + item + " at index " + counter);
+               	return true;
+           	}
+           	now = now.next;
 			counter++;
-        	}
-       		System.out.println("Error: No node found with given data!");
-        	return false;
-    	}
+        }
+       	System.out.println("Error: No node found with given data!");
+        return false;
+    }
 	
 	public boolean checkIndex(int index){
 		if(index > size || index < 1){
