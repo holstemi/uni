@@ -12,9 +12,9 @@ class LinkedList{
 		Node now = first;
 		while(now.next != null){
 			System.out.print(now.item + " -> ");
-			item = item.next;
+			now = now.next;
 		}
-		System.out.println(item.data);
+		System.out.println(now.item);
 	}
 	
 	public void add(int item){ //add an item to the end of the list
