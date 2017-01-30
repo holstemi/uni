@@ -46,7 +46,7 @@ class LinkedList{
 	public boolean deleteNodeWithData(int item){
 		Node now = first;
 		while(now.next != null){
-			if(now.next.data == item){
+			if(now.next.item == item){
 				Node toBeKilled = now.next;
 				now.next = now.next.next;
 				toBeKilled = null;
@@ -88,7 +88,7 @@ class LinkedList{
 		Node now = first;
 		int counter = 0;
 		while(now.next != null){
-			if(now.data == item){
+			if(now.item == item){
 				System.out.println("Found a node containing " + item + " at index " + counter);
 				return true;
 			}
