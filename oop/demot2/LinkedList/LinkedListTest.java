@@ -12,7 +12,7 @@ public class LinkedListTest{
 	L.findNodeWithData("Moi");
 	L.addToIndex("terve",2);
     	L.print();
-    	L.deleteNodeAtIndex(3);
+    	L.deleteNodeAtIndex(0);
     	L.print();
     	L.deleteNodeAtIndex(1);
     	L.print();

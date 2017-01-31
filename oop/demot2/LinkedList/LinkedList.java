@@ -59,7 +59,12 @@ class LinkedList{
 	}
 	
 	public void deleteNodeAtIndex(int index){
-		if(checkIndex(index)){
+		if (index == 0){
+			first = first.next;
+			size--;
+			System.out.println("Success! Node at index " + index + " deleted.");
+		}
+		else if(checkIndex(index)){
 			Node now = first;
 			for(int i = 0; i < index-1; i++){
 				now = now.next;
@@ -80,7 +85,7 @@ class LinkedList{
 		}
 	}
 	
-	public boolean findNodeWithData(Object item){ //ei toimi atm
+	public boolean findNodeWithData(Object item){
 		Node now = first;
 		int counter = 0;
 		while(now != null){
@@ -96,7 +101,7 @@ class LinkedList{
 	}
 	
 	public boolean checkIndex(int index){
-		if(index > size || index < 1){
+		if(index > size || index < 0){
     			System.out.println("Error: index out of bounds!");
     			return false;
     		}
