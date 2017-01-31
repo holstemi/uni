@@ -1,4 +1,4 @@
-class LinkedList{
+public class LinkedList{
 	
 	Node first; //the first node
 	int size; //size of the list
@@ -25,6 +25,7 @@ class LinkedList{
     			now = now.next;
     		}
     		now.next = newNode;
+		newNode.previous = now;
     		size++;
         	System.out.println(item + " added to the end of our LinkedList!");
    	}
@@ -38,6 +39,8 @@ class LinkedList{
     			}
     			newNode.next = now.next;
     			now.next = newNode;
+			newNode.previous = now;
+			newNode.next.previous = newNode;
     			size++;
     			System.out.println("Success! " + item + " added at index " + index);
     		}
@@ -45,9 +48,14 @@ class LinkedList{
 	
 	public boolean deleteNodeWithData(Object item){
 		Node now = first;
-		while(now.next != null){
-			if(now.next.item.equals(item)){
-				now.next = now.next.next;
+		while(now != null){
+			if(now.item.equals(item)){
+				if(now.next != null){
+					now.previous.next = now.next;
+					now.next.previous = now.previous;
+				}
+				now.previous.next = null;
+				now = null;
 				size--;
 				System.out.println("Success! The first occurrence of a node with data " + item + " deleted.");
 				return true;
@@ -61,15 +69,18 @@ class LinkedList{
 	public void deleteNodeAtIndex(int index){
 		if (index == 0){
 			first = first.next;
+			first.previous = null;
 			size--;
 			System.out.println("Success! Node at index " + index + " deleted.");
 		}
 		else if(checkIndex(index)){
 			Node now = first;
-			for(int i = 0; i < index-1; i++){
+			for(int i = 0; i < index; i++){
 				now = now.next;
 			}
-			now.next = now.next.next;
+			now.previous.next = now.next;
+			now.next.previous = now.previous;
+			now = null;
 			size--;
 			System.out.println("Success! Node at index " + index + " deleted.");
 		}
@@ -112,6 +123,7 @@ class LinkedList{
 class Node{
 	Object item;
 	Node next;
+	Node previous;
 	
 	public Node(Object item){
 		this.item = item;
