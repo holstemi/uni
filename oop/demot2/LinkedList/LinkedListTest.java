@@ -1,14 +1,16 @@
 public class LinkedListTest{
 	public static void main(String[] args) {
 
-    	LinkedList L = new LinkedList();
+    	LinkedList L = new LinkedList(0.0);
     	L.add(1);
     	L.print();
-    	L.add(2);
+    	L.add("Moi");
     	L.print();
     	L.add(3);
     	L.print();
-    	L.deleteNodeWithData(2);
+    	L.deleteNodeWithData(3);
+	L.findNodeWithData("Moi");
+	L.addToIndex("terve",2);
     	L.print();
     	L.deleteNodeAtIndex(3);
     	L.print();
@@ -16,6 +18,3 @@ public class LinkedListTest{
     	L.print();
 	}
 }
-
-
-//Crediz for helpin understand: https://gist.github.com/akshaynagpal/14ee8b54cd018bd05b2a3c2432c818dc

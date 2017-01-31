@@ -108,7 +108,7 @@ class LinkedList{
 	}
 }
 
-public class Node{
+class Node{
 	int item;
 	Node next;
 	

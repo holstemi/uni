@@ -3,7 +3,7 @@ class LinkedList{
 	Node first; //the first node
 	int size; //size of the list
 	
-	public LinkedList(int item){
+	public LinkedList(Object item){
 		first = new Node(item);
 		size = 0;
 	}
@@ -17,7 +17,7 @@ class LinkedList{
 		System.out.println(now.item);
 	}
 	
-	public void add(int item){ //add an item to the end of the list
+	public void add(Object item){ //add an item to the end of the list
     		Node newNode = new Node(item);
     		Node now = first;
 
@@ -29,7 +29,7 @@ class LinkedList{
         	System.out.println(item + " added to the end of our LinkedList!");
    	}
 	
-	public void addToIndex(int item, int index){ //add an item to a certain index of the list
+	public void addToIndex(Object item, int index){
 		if(checkIndex(index)){
 			Node newNode = new Node(item);
 			Node now = first;
@@ -43,32 +43,28 @@ class LinkedList{
     		}
     	}
 	
-	public boolean deleteNodeWithData(int item){
+	public boolean deleteNodeWithData(Object item){
 		Node now = first;
 		while(now.next != null){
-			if(now.next.item == item){
-				Node toBeKilled = now.next;
+			if(now.next.item.equals(item)){
 				now.next = now.next.next;
-				toBeKilled = null;
 				size--;
 				System.out.println("Success! The first occurrence of a node with data " + item + " deleted.");
 				return true;
 			}
 			now = now.next;
-        }
+		}
 		System.out.println("Error: No node found with given data!");
 		return false;
 	}
-
-    public void deleteNodeAtIndex(int index){
+	
+	public void deleteNodeAtIndex(int index){
 		if(checkIndex(index)){
 			Node now = first;
 			for(int i = 0; i < index-1; i++){
 				now = now.next;
 			}
-			Node toBeKilled = now.next;
 			now.next = now.next.next;
-			toBeKilled = null;
 			size--;
 			System.out.println("Success! Node at index " + index + " deleted.");
 		}
@@ -84,11 +80,11 @@ class LinkedList{
 		}
 	}
 	
-	public boolean findNodeWithData(int item){
+	public boolean findNodeWithData(Object item){ //ei toimi atm
 		Node now = first;
 		int counter = 0;
-		while(now.next != null){
-			if(now.item == item){
+		while(now != null){
+			if(now.item.equals(item)){
 				System.out.println("Found a node containing " + item + " at index " + counter);
 				return true;
 			}
@@ -108,11 +104,11 @@ class LinkedList{
 	}
 }
 
-public class Node{
-	int item;
+class Node{
+	Object item;
 	Node next;
 	
-	public Node(int item){
+	public Node(Object item){
 		this.item = item;
 	}
 }
