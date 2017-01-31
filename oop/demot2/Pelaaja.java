@@ -19,3 +19,8 @@ public class Pelaaja{
 		return pelipaikka;
 	}
 }
+
+class Jalkapallonpelaaja extends Pelaaja{
+	boolean oikeajalkainen;
+	double viikkopalkka;
+}

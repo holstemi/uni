@@ -1,5 +1,9 @@
 public class Joukkue{
-	public ArrayList<Pelaaja> pelaajat = new ArrayList<Pelaaja>();
+	public ArrayList<Pelaaja> pelaajat;
+	
+	public Joukkue(){
+		pelaajat = new ArrayList<Pelaaja>()
+	}
 	
 	public void lisaaPelaaja(String n, int num, String pp){
 		Pelaaja uusiPelaaja = new Pelaaja(n,num,pp);
@@ -21,4 +25,11 @@ public class Joukkue{
 			System.out.println(x.annaPelipaikka());
 		}
 	}
+}
+
+class Jalkapallojoukkue extends Joukkue{
+	final int MAX_PELAAJIA = 22;
+	String kotistadion;
+	
+	
 }
