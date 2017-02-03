@@ -7,15 +7,15 @@ public class Flappy{
 		while(g.play){
 			try{
 				g.refresh();
-				/*int tmp = 0;
-				while(!g.sc.nextLine().equals(" ") && tmp == 0){
-					g.b.y--;
-					tmp = 1;
-				}*/
-				while(g.sc.hasNext(" ")){
-					g.b.y--;
+
+				if(g.sc.hasNext()){
+					String tmp = g.sc.next();
+					if(tmp.equals(" ")){
+						g.b.y++;
+					}
 				}
-				g.b.y++;
+
+				//g.b.y++;
 				g.count++;
 				Thread.sleep(1000/g.fps); //inverse of refresh rate
 				if(g.count > 5){
@@ -51,7 +51,7 @@ class Game{
 	public void refresh(){
 		for (int i = 0; i < 50; ++i){System.out.println();} //clear screen
 		clear(); //clear field
-		field[Bird.y][Bird.x] = "@"; //palce bird
+		field[b.y][b.x] = "@"; //palce bird
 		printField();
 	}
 
@@ -75,8 +75,8 @@ class Game{
 
 class Bird{
 
-	static int y;
-	static final int x;
+	int y;
+	int x;
 
 	Bird(int y, int x){
 		this.y = y;
