@@ -7,6 +7,7 @@ public class Flappy{
 			if(){
 				g.gameOver();
 			}
+			Thread.sleep(100);
 		}
 	}
 	
@@ -24,12 +25,11 @@ class Game{
 	}
 	
 	public void refresh(){
-		for (int y = 0; y < field.length; y++){
-			System.out.print("|");
-			for (char x : field[y]){
+		for (int i = 0; i < 50; ++i){System.out.println();} //clear screen
+		for (char[] y : field){ //topmost array
+			for (int i = y.length; i >= 0; i--){ //rightmost column
 				System.out.print(x);
 			}
-			System.out.println("|")
 		}
 	}
 	
