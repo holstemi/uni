@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Flappy{
 	
 	public static void main(String args[]){
-		Game g = new Game();
+		Game g = new Game(20,40,1);
 		while(g.play){
 			try{
 				g.refresh();
@@ -11,11 +11,10 @@ public class Flappy{
 				while(!g.sc.nextLine().equals(" ") && tmp == 0){
 					g.b.y--;
 					tmp = 1;
-				}
-				while(g.sc.nextLine().equals(" ") && tmp == 1){
-					g.b.y++;
-					tmp = 2;
 				}*/
+				while(g.sc.hasNext(" ")){
+					g.b.y--;
+				}
 				g.b.y++;
 				g.count++;
 				Thread.sleep(1000/g.fps); //inverse of refresh rate
@@ -41,11 +40,12 @@ class Game{
 	Bird b;
 	int fps;
 	
-	public Game(){
+	public Game(int row, int col, int fps){
 		play = true;
-		spawnGame(20,40);
+		field = new String[row][col];
+		b = new Bird(row/2, col/3);
 		sc = new Scanner(System.in);
-		fps = 1;
+		this.fps = fps;
 	}
 	
 	public void refresh(){
@@ -64,12 +64,6 @@ class Game{
 		}
 	}
 
-	public void spawnGame(int row, int col){
-		field = new String[row][col];
-		b = new Bird(row/2, col/3);
-		
-	}
-
 	public void clear(){
 		for(int y = 0; y < field.length; y++){
 			for(int x = 0; x < field[y].length; x++){
@@ -80,8 +74,9 @@ class Game{
 }
 
 class Bird{
+
 	static int y;
-	static int x;
+	static final int x;
 
 	Bird(int y, int x){
 		this.y = y;
