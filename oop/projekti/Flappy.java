@@ -18,7 +18,7 @@ public class Flappy{
 				}*/
 				g.b.y++;
 				g.count++;
-				Thread.sleep(1000);
+				Thread.sleep(1000/g.fps); //inverse of refresh rate
 				if(g.count > 5){
 					throw new Exception();
 				}
@@ -39,11 +39,13 @@ class Game{
 	int count;
 	Scanner sc;
 	Bird b;
+	int fps;
 	
 	public Game(){
 		play = true;
 		spawnGame(20,40);
 		sc = new Scanner(System.in);
+		fps = 1;
 	}
 	
 	public void refresh(){
@@ -64,11 +66,6 @@ class Game{
 
 	public void spawnGame(int row, int col){
 		field = new String[row][col];
-		for(int y = 0; y < field.length; y++){
-			for(int x = 0; x < field[y].length; x++){
-				field[y][x] = ".";
-			}
-		}
 		b = new Bird(row/2, col/3);
 		
 	}
