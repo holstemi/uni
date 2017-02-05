@@ -89,6 +89,10 @@ this.opettajat.add(opettaja);
         
     }
      public void poistaHenkilo(Opettaja o){
+        this.opettajat.remove(o);
+        
+    }
+     public void poistaHenkilo(Opettaja o){
        this.opettajat.remove(o);
      }
     public boolean onkoKurssilla( Opiskelija o){
@@ -104,5 +108,24 @@ this.opettajat.add(opettaja);
     }
   return kurssilla;
     
+}
+  public void printOpiskelijat {
+      String Etunimi;
+      String Sukunimi;
+  for(int i = 0; i < osallistujat.size();i++){
+      etunimi = osallistujat.get(i).getEtunimi();
+      sukunimi = osallistujat.get(i).getSukunimi();
+      System.out.println(etunimi,sukunimi);
+  }
+}
+    }
+  public void printOpettajat {
+      String Etunimi;
+      String Sukunimi;
+  for(int i = 0; i < opettajat.size();i++){
+      etunimi = opettajat.get(i).getEtunimi();
+      sukunimi = opettajat.get(i).getSukunimi();
+      System.out.println(etunimi,sukunimi);
+  }
 }
 }
