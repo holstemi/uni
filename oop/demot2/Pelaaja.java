@@ -23,4 +23,22 @@ public class Pelaaja{
 class Jalkapallonpelaaja extends Pelaaja{
 	boolean oikeajalkainen;
 	double viikkopalkka;
+	
+	Jalkapallonpelaaja(){
+		oikeajalkainen = true;
+		viikkopalkka = 100.0;
+	}
+	
+	public void onOikeajalkainen(boolean x){
+		oikeajalkainen = x;
+	}
+	public boolean onkoOikeajalkainen(){
+		return oikeajalkainen;
+	}
+	public void viikonPalkka(double x){
+		viikkopalkka = x;
+	}
+	public double annaPalkka(){
+		return viikkopalkka;
+	}
 }

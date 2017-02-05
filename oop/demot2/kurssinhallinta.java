@@ -2,6 +2,12 @@ public class Opiskelija{
 	String nimi;
 	int opiskelijanumero;
 	ArrayList<Integer> tulokset;
+	
+	Opiskelija(String n, int o, ArrayList<Integer> t){
+		nimi = n;
+		opiskelijanumero = o;
+		tulokset = t;
+	}
 }
 
 public class Kurssi{

@@ -52,7 +52,7 @@ class Autolautta extends Laiva{
 		}
 		else{
 			System.out.println("Rahti ylittaa laivan kapasiteetin.");
-			matkustajamaara = 9*cap/10;
-			ajoneuvojenmaara = cap/10;
+			matkustajamaara = mm;
+			ajoneuvojenmaara = (cap - mm)/10;
 		}
 }
