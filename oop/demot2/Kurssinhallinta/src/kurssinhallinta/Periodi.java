@@ -14,9 +14,11 @@ import java.util.ArrayList;
 public class Periodi {
     private ArrayList<Kurssi> periodi;
     private String ajankohta;
+    private String nimi; // onko periodi 1 tai 2 kyseessa
     
-   public Periodi(String ajankohta){
+   public Periodi(String ajankohta, String nimi){
        this.ajankohta= ajankohta;
+    this.nimi = nimi;
    }
 
     /**
@@ -25,6 +27,12 @@ public class Periodi {
     public ArrayList<Kurssi> getPeriodi() {
         return periodi;
     }
+ public void setNimi(String nimi){
+this.nimi = nimi; 
+ }
+ public String getNimi(){
+ return nimi;
+ }
 
     /**
      * @param periodi the periodi to set
@@ -49,6 +57,13 @@ public class Periodi {
     public void setAjankohta(String ajankohta) {
         this.ajankohta = ajankohta;
     }
+ 
+ }
+  public void printPeriodi {
+  for(int i = 0; i < periodi.size();i++){
+      System.out.println(periodi.get(i).getNimi());
+  }
+}
     
     
 }
@@ -86,6 +101,10 @@ private int vuosi;
     public void setVuosi(int vuosi) {
         this.vuosi = vuosi;
     }
+ public void printLukuvuosi {
+  for(int i = 0; i < lukuvuosi.size();i++){
+      System.out.println(lukuvuosi.get(i).getNimi());
+  }
 
 }
 
