@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author iikka
+ 
  */
 public class Periodi {
     private ArrayList<Kurssi> periodi;
