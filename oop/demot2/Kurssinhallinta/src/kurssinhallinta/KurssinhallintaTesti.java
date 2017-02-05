@@ -7,7 +7,7 @@ package kurssinhallinta;
 
 /**
  *
- * @author iikka
+
  */
 public class KurssinhallintaTesti {
 
