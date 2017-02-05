@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author iikka
+ *
  */
 public class Yliopistolainen {
     private String etunimi;
