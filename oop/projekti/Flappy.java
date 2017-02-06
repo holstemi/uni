@@ -7,15 +7,13 @@ public class Flappy{
 		if(args[0] == null){Game g = new Game(20,40,1);}
 		else{Game g = new Game(20,40,args[0]);}
 		Input in = new Input();
+		in.start();
 		while(g.play){
 			try{
-				in.start();
-				g.refresh();
-				
-				if(in.Status() == WAITING){
+				g.refresh();		
+				if(in.getState() != Thread.State.WAITING){
 					g.b.y--;
 				}else{g.b.y++;}
-				
 				g.count++;
 				Thread.sleep(1000/g.fps); //inverse of refresh rate
 				if(g.count > 5){
@@ -83,10 +81,12 @@ class Bird{
 }
 
 class Input extends Thread{
-	Scanner sc;
 	
-	public Input(){
-		sc = new Scanner(System.in);
-		String a = sc.nextLine();
+	public void run(){
+		while(true){
+			Scanner sc = new Scanner(System.in);
+			String tmp = sc.nextLine();
+			sc.close();
+		}
 	}
 }
