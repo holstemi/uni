@@ -1,21 +1,21 @@
 import java.util.Scanner;
+import java.lang.Thread;
 
 public class Flappy{
 	
 	public static void main(String args[]){
-		Game g = new Game(20,40,1);
+		if(args[0] == null){Game g = new Game(20,40,1);}
+		else{Game g = new Game(20,40,args[0]);}
+		Input in = new Input();
 		while(g.play){
 			try{
+				in.start();
 				g.refresh();
-
-				if(g.sc.hasNext()){
-					String tmp = g.sc.next();
-					if(tmp.equals(" ")){
-						g.b.y++;
-					}
-				}
-
-				//g.b.y++;
+				
+				if(in.Status() == WAITING){
+					g.b.y--;
+				}else{g.b.y++;}
+				
 				g.count++;
 				Thread.sleep(1000/g.fps); //inverse of refresh rate
 				if(g.count > 5){
@@ -36,7 +36,6 @@ class Game{
 	private String[][] field;
 	boolean play;
 	int count;
-	Scanner sc;
 	Bird b;
 	int fps;
 	
@@ -44,7 +43,6 @@ class Game{
 		play = true;
 		field = new String[row][col];
 		b = new Bird(row/2, col/3);
-		sc = new Scanner(System.in);
 		this.fps = fps;
 	}
 	
@@ -81,5 +79,14 @@ class Bird{
 	Bird(int y, int x){
 		this.y = y;
 		this.x = x;
+	}
+}
+
+class Input extends Thread{
+	Scanner sc;
+	
+	public Input(){
+		sc = new Scanner(System.in);
+		String a = sc.nextLine();
 	}
 }

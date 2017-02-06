@@ -1,10 +1,10 @@
-public class LinkedList{
+public class LinkedList<Type>{
 	
-	Node first; //the first node
+	Node<Type> first; //the first node
+	Node<Type> last; //the last node
 	int size; //size of the list
 	
-	public LinkedList(Object item){
-		first = new Node(item);
+	public LinkedList(){
 		size = 0;
 	}
 	
@@ -19,15 +19,19 @@ public class LinkedList{
 	
 	public void add(Object item){ //add an item to the end of the list
     		Node newNode = new Node(item);
-    		Node now = first;
-
-    		while(now.next != null){
-    			now = now.next;
-    		}
-    		now.next = newNode;
-		newNode.previous = now;
-    		size++;
-        	System.out.println(item + " added to the end of our LinkedList!");
+			if (first == null){
+				first = newNode;
+			}
+    		else{
+				Node now = first;
+				while(now.next != null){
+					now = now.next;
+				}
+				now.next = newNode;
+				newNode.previous = now;
+				size++;
+				System.out.println(item + " added to the end of our LinkedList!");
+			}
    	}
 	
 	public void addToIndex(Object item, int index){
@@ -120,12 +124,12 @@ public class LinkedList{
 	}
 }
 
-class Node{
-	Object item;
+class Node<Type>{
+	Type item;
 	Node next;
 	Node previous;
 	
-	public Node(Object item){
+	public Node(Type item){
 		this.item = item;
 	}
 }
