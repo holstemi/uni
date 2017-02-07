@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Thread;
 
-public class Flappy{
+public class Flappy_CLI{
 	
 	public static void main(String args[]){
 		Game g = new Game(20,40,1);
