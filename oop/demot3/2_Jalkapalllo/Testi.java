@@ -1,7 +1,6 @@
 public class Testi {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stu
 		Jalkapallojoukkue a = new Jalkapallojoukkue("kerava");
 		Jalkapallonpelaaja c = new Jalkapallonpelaaja("Matti",32,"5");
 		Jalkapallonpelaaja g = new Jalkapallonpelaaja("Teppo",43,"6");
