@@ -40,7 +40,8 @@ public class BST<T>{
 	
 	public void add(T item, int id){
 		Node newNode = new Node(item, id);
-		iterFind(id, root).right = newNode;
+		if(root == null){root = newNode;}
+		else{iterFind(id, root).right = newNode;}
 	}
 	
 	/*
