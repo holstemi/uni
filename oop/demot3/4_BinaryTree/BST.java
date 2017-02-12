@@ -3,6 +3,10 @@ public class BST<T>{
 	private Node<T> root;
 	int levels;
 	
+	public BST(){
+		root = null;
+	}
+	
 	public void print(){
 		Node now = root;
         if (now != null){
