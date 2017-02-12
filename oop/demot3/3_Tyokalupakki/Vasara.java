@@ -1,5 +1,8 @@
 public class Vasara extends Tyokalupakki{
-tyokalut.add(<Vasara> vasara);
+public Vasara(){
+	private String nimi = new String("Vasara");
+	tyokalut.add(<Vasara> vasara);
+}
 public boolean onTeroitettavissa(){
   return false;
   }
