@@ -3,11 +3,11 @@ public class BSTest{
 
     	BST<Integer> B = new BST<Integer>();
     	B.add(1,1);
-    	B.print(B.root);
+    	B.print();
     	B.add(5,5);
-    	B.print(B.root);
+    	B.print();
     	B.add(3,3);
-    	B.print(B.root);
+    	B.print();
 		B.find(3);
 		B.add(42,42);
 		B.add(2021,2021);
@@ -15,6 +15,6 @@ public class BSTest{
 		B.add(34,34);
 		B.add(769,769);
 		B.add(6,6);
-    	B.print(B.root);
+    	B.print();
 	}
 }

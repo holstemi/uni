@@ -1,7 +1,7 @@
 public class BST<T>{
 	
-	public static Node<T> root;
-	int levels;
+	private Node<T> root;
+	//int levels;
 	
 	public BST(){
 		root = null;
