@@ -1,20 +1,28 @@
+import java.util.ArrayList;
 import java.lang.Math;
 
 public class BinaryTree<T>{
 	
-	Node<T> root;
-	int maxLevel;
+	private Node<T> root;
+	private ArrayList<Node[]> level;
+	//int maxNodeLvl;
 	
 	public BinaryTree(){
-		maxLevel = 1;
+		level = new ArrayList<Node[]>();
+		root = null;
+		Node[] lvl_1 = new Node[1];
+		level.add(lvl_1);
 	}
 	
 	public BinaryTree(T item){
-		maxLevel = 1;
-		root = new Node(item,0);
+		level = new ArrayList<Node[]>();
+		root = new Node(item);
+		Node[] lvl_1 = new Node[1];
+		lvl_1[0] = root;
+		level.add(lvl_1);
 	}
 	
-	public void print(){
+	/*public void print(){
 		Node now = root;
 		while(now.next != null){
 			System.out.println(now.giveItem());
@@ -22,30 +30,83 @@ public class BinaryTree<T>{
 			now = now.next;
 		}
 		System.out.println(now.giveItem());
+	}*/
+	
+	public boolean add(T item){
+    	Node newNode = new Node(item);
+		if (root == null){
+			root = newNode;
+			
+		}
+    	else{
+			for(Node[] x : level){
+				for(int i = 0; i < x.length; i++){
+					if(x[i].left == null){x[i].left = newNode; return true;}
+					else if(x[i].right == null){x[i].right = newNode; return true;}
+				}
+			}
+			Node[] lvl_x = new Node[Math.Pow(2,level.size())];
+			lvl_x[0] = newNode;
+			level.add(lvl_x);
+		}
+   	}
+	
+	/*
+	public boolean add(T item){
+		Node newNode = new Node(item);
+		Node now = root;
+		
+		while(true){
+			
+			Node bottom = checkLeftBranch(now);
+			int nodeLvl = bottom.giveLvl();
+			
+			if(bottom.right == null){
+				bottom.right = newNode; 
+				newNode.parent = bottom; 
+				return true;
+			}
+			
+			now = bottom;
+			
+			try{
+				now = nextRightBranch(now);
+			}catch(Exception e){
+				now = root;
+				for(now.left != null){
+					now = now.left;
+				}
+				now.left = newNode;
+				newNode.parent = now;
+				return true;
+			}
+		}
 	}
 	
-	public void add(T item){
-    		Node newNode = new Node(item);
-			int level = 0;
-			int maxOnLevel = 1;
-			int onLevel = 1;
-			if (root == null){
-				root = newNode;
-			}
-    		else{
-				Node now = root;
-				while(now.left != null || now.right != null){
-					now = now.left;
-					level = now.lvl;
-					maxOnLevel = Math.Pow(2,level);
-				}
-				if(now.left == null){now.left = newNode;}
-				else if(now.right == null){onLevel++; now.right = newNode;}
-				else{onLevel++; level--;}
-				size++;
-				System.out.println(item + " added to BinaryTree!");
-			}
-   	}
+	public Node nextRightBranch(Node x){
+		Node tmp = x;
+		while(tmp.parent.right.equals(tmp)){
+			tmp = tmp.parent;
+		}
+		return tmp.parent.right;
+	}
+	
+	public Node checkLeftBranch(Node x){
+		Node now = x;
+		while(now.left != null){
+			if(now.right == null){return now;}
+			else{now = now.left;}
+		}
+		return now;
+	}
+	
+	public void addToRight(Node now){
+		if(checkLeftBranch(now).right == null){
+			checkLeftBranch(now).right = newNode; 
+			newNode.parent = checkLeftBranch(now); 
+		}
+	}
+	*/
 	
 	public boolean findNodeWithData(T item){
 		Node now = root;
@@ -71,16 +132,20 @@ public class BinaryTree<T>{
 
 class Node<T>{
 	private T item;
-	int lvl;
+	//Node parent;
 	Node left;
 	Node right;
+	//int lvl;
 	
-	public Node(T item, int level){
+	public Node(T item){
 		this.item = item;
-		this.level = level;
 	}
 	
 	public giveItem(){
 		return item;
 	}
+	
+	/*public int giveLvl(){
+		return lvl;
+	}*/
 }
