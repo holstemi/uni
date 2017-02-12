@@ -18,7 +18,6 @@ public class BinaryTree<T>{
 		for(Node[] x : level){
 			for(int i = 0; i < x.length; i++){
 				if(x[i] != null){
-					for(int k = 0; k < level.size()-i; k++){System.out.print(" ");}
 					System.out.print(x[i].getItem());
 				}
 			}
@@ -47,8 +46,7 @@ public class BinaryTree<T>{
 				iterFind(item, now.left);
 				iterFind(item, now.right);
 			}catch(Exception e){
-				System.out.println("Item not found!");
-				return false;
+				break;
 			}
 		}
 		System.out.println("Item found!");
