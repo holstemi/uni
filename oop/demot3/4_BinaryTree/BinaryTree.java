@@ -55,6 +55,7 @@ public class BinaryTree<T>{
 			System.out.println("Item found!");
 			return true;
 		}catch(Exception e){System.out.println("Item found!");}
+		return false;
 	}
 	
 	public boolean add(T item){
