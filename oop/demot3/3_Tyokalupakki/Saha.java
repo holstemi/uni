@@ -1,5 +1,6 @@
 public class Saha extends Tyokalupakki{
-  public boolean onTeroitettavissa(){
+tyokalut.add(<Saha> saha);  
+public boolean onTeroitettavissa(){
   return true;
   }
 	public boolean onLadattavissa(){
