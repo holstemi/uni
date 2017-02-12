@@ -64,17 +64,19 @@ public class BinaryTree<T>{
 				for(int i = 0; i < x.length; i++){
 					if(x[i] == null){
 						if(i%2 == 0){
-							level.get(j-1)[i/2].left = newNode; return true;
+							level.get(j-1)[i/2].left = newNode; System.out.println("Add succesful!"); return true;
 						}
-						else{level.get(j-1)[i/2].right = newNode; return true;}
+						else{level.get(j-1)[i/2].right = newNode; System.out.println("Add succesful!"); return true;}
 					}
 				}
 			}
 			Node[] lvl_x = new Node[(int)Math.pow(2.0,level.size())];
 			lvl_x[0] = newNode;
 			level.add(lvl_x);
+			System.out.println("Add succesful!");
 		}
 		return false;
+		System.out.println("Add failed!");
    	}
 }
 
