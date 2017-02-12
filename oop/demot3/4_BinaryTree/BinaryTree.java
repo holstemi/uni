@@ -32,7 +32,7 @@ public class BinaryTree<T>{
 	
 	public void iterPrint(Node now){
 		if (now != null){
-            System.out.println(now);
+            System.out.println(now.getItem());
             iterPrint(now.left);
             iterPrint(now.right);
 		}
