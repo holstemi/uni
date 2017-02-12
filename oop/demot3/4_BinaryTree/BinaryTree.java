@@ -89,12 +89,12 @@ public class BinaryTree<T>{
 			else{now = now.left;}
 		}
 		while(true){
-			if(now.giveItem().equals(item)){System.out.println("Item was found!"); return true;}
+			if(now.giveItem().equals(data)){System.out.println("Item was found!"); return true;}
 			
 			Node bottom = checkLeftBranch(now);
 			
 			now = bottom;
-			if(now.giveItem().equals(item)){System.out.println("Item was found!"); return true;}
+			if(now.giveItem().equals(data)){System.out.println("Item was found!"); return true;}
 			try{now = nextRightBranch(now);}
 			catch(Exception e){System.out.println("Item not found!");return false;}
 		}
