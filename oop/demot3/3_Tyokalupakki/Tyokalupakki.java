@@ -1,7 +1,7 @@
 import java.lang.Thread;
 
 public Tyokalupakki{
-
+	ArrayList<Tyokalupakki> tyokalut;
 	boolean onTeroitettavissa();
 	boolean onLadattavissa();
 	
