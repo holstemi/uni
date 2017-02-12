@@ -20,4 +20,7 @@ public Tyokalupakki{
 			System.out.println("Teroitus valmis!");
 		}
 	}
+	protected String aani(){
+	return "aani";
+	}
 }
