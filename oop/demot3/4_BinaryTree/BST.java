@@ -13,42 +13,43 @@ public class BST<T>{
 	public void iterPrint(Node now){
 		 if (now != null){
 			iterPrint(now.left);
-            System.out.println(now.getItem()+" ");
+            System.out.print(now.getItem()+" ");
             iterPrint(now.right);
 		}
 	}
 	
-	public Node find(int id){ //BST:n lapikayntiin
+	public void find(int id){
+		if(seek(id) != null){
+			System.out.println("Id not found!");
+		}
+		else{System.out.println("Found!");}
+	}
+	
+	public Node seek(int id){ //BST:n lapikayntiin
 		Node now = root;
 		while(now != null){
 			if(now.getId() == id){
-				System.out.println("Found!");
-				return now;
+				return null;
 			}
 			else if(now.getId() >= id && now.left == null){
-				System.out.println("Id not found!");
 				return now;
 			}
 			else if(now.getId() >= id && now.left.getId() < id ){
-				System.out.println("Id not found!");
 				return now;
 			}
 			else if(now.getId() > id){
 				now = now.left;
 			}
 			else if(now.getId() <= id && now.right == null){
-				System.out.println("Id not found!");
 				return now;
 			}
 			else if(now.getId() <= id && now.right.getId() > id ){
-				System.out.println("Id not found!");
 				return now;
 			}
 			else{
 				now = now.right;
 			}
 		}
-		System.out.println("Id not found!");
 		return null;
 	}
 	
@@ -56,14 +57,16 @@ public class BST<T>{
 		Node newNode = new Node(item, id);
 		if(root == null){root = newNode;}
 		else{
-			Node tmp = find(id);
-			if(tmp.getId() > id){
-				newNode.left = tmp.left;
-				tmp.left = newNode;
-			}else{
-				newNode.right = tmp.right;
-				tmp.right = newNode;
-			}
+			Node tmp = seek(id);
+			if(tmp != null){
+				if(tmp.getId() > id){
+					newNode.left = tmp.left;
+					tmp.left = newNode;
+				}else{
+					newNode.right = tmp.right;
+					tmp.right = newNode;
+				}
+			}else{System.out.println("Add failed");}
 		}
 	}
 	
