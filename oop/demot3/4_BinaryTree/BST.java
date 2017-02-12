@@ -26,7 +26,11 @@ public class BST<T>{
 		while(now != null){
 			if(now.getId() == id){
 				System.out.println("Found!");
-				return true;
+				return now;
+			}
+			else if(now.getId() >= id && now.left.getId() < id){
+				System.out.println("Id not found!");
+				return now;
 			}
 			else if(now.getId() > id){
 				iterFind(id, now.left);
@@ -39,26 +43,10 @@ public class BST<T>{
 		return null;
 	}
 	
-	public Node iterAdd(int id, Node now){
-		while(now != null){
-			if(now.getId() >= id && now.left.getId() < id){
-				return now;
-			}
-			else if(now.getId() > id){
-				iterAdd(id, now.left);
-			}
-			else{
-				iterAdd(id, now.right);
-			}
-		}
-		System.out.println("Id not found!");
-		return null;
-	}
-	
 	public void add(T item, int id){
 		Node newNode = new Node(item, id);
 		if(root == null){root = newNode;}
-		else{iterAdd(id, root).right = newNode;}
+		else{iterFind(id, root).right = newNode;}
 	}
 	
 	/*
