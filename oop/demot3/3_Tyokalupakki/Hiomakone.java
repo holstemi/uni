@@ -1,5 +1,9 @@
 public class Hiomakone extends Tyokalupakki{
-tyokalut.add(<Hiomakone> hiomakone);
+
+public Hiomakone(){
+	private String nimi = new String("Hiomakone");
+	tyokalut.add(<Hiomakone> hiomakone);
+}
 public boolean onTeroitettavissa(){
   return false;
   }
