@@ -49,6 +49,7 @@ public class BST<T>{
 				iterAdd(id, now.right);
 			}else{return now;}
 		}
+		return now;
 	}
 	
 	public void add(T item, int id){
