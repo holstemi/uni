@@ -13,7 +13,7 @@ public class BST<T>{
 	public void iterPrint(Node now){
 		 if (now != null){
 			iterPrint(now.left);
-            System.out.print(now.getItem()+" ");
+            System.out.println(now.getItem()+" ");
             iterPrint(now.right);
 		}
 	}
@@ -172,7 +172,7 @@ public class BST<T>{
 class Node<T>{
 	private T item;
 	private int id;
-	Node parent;
+	//Node parent;
 	Node left;
 	Node right;
 	

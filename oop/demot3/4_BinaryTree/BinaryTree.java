@@ -43,7 +43,7 @@ public class BinaryTree<T>{
 	}
 	
 	public boolean iterFind(T item, Node now){
-		try{
+		while(now != null){
 			while(!now.getItem().equals(item)){
 				try{
 					iterFind(item, now.left);
@@ -54,7 +54,7 @@ public class BinaryTree<T>{
 			}
 			System.out.println("Item found!");
 			return true;
-		}catch(Exception e){System.out.println("Item found!");}
+		}
 		return false;
 	}
 	
