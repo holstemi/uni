@@ -33,7 +33,6 @@ public class BST<T>{
 			}
 			else{
 				iterFind(id, now.right);
-				}
 			}
 		}
 		System.out.println("Id not found!");
