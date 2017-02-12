@@ -30,9 +30,15 @@ public class BST<T>{
 			System.out.println("No nodes with such id in tree");
 		}
 		else if(now.getId() > id){
-			iterFind(id, now.left);
+			if(now.left != null){
+				iterFind(id, now.left);
+			}else{System.out.println("No nodes with such id in tree");}
 		}
-		iterFind(id, now.right);
+		else{
+			if(now.right != null){
+				iterFind(id, now.right);
+			}else{System.out.println("No nodes with such id in tree");}
+		}
 	}
 	
 	public Node iterAdd(int id, Node now){
