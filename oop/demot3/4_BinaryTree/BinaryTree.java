@@ -26,7 +26,7 @@ public class BinaryTree<T>{
 		Node now = root;
 		for(Node[] x : level){
 			for(int i = 0; i < x.length; i++){
-				System.out.print(x[i]);
+				System.out.print(x[i].getItem());
 			}
 			System.out.println();
 		}
@@ -92,16 +92,16 @@ public class BinaryTree<T>{
 		Node now = root;
 		
 		while(tmp.left != null){
-			if(now.giveItem().equals(data)){System.out.println("Item was found!"); return true;}
+			if(now.getItem().equals(data)){System.out.println("Item was found!"); return true;}
 			else{now = now.left;}
 		}
 		while(true){
-			if(now.giveItem().equals(data)){System.out.println("Item was found!"); return true;}
+			if(now.getItem().equals(data)){System.out.println("Item was found!"); return true;}
 			
 			Node bottom = checkLeftBranch(now);
 			
 			now = bottom;
-			if(now.giveItem().equals(data)){System.out.println("Item was found!"); return true;}
+			if(now.getItem().equals(data)){System.out.println("Item was found!"); return true;}
 			try{now = nextRightBranch(now);}
 			catch(Exception e){System.out.println("Item not found!");return false;}
 		}
@@ -122,7 +122,7 @@ public class BinaryTree<T>{
 				for(int j = 0; j <= i; j++){
 					now = now.left;
 				}
-				System.out.print(now.giveItem());
+				System.out.print(now.getItem());
 			}
 		}
 	}
@@ -157,7 +157,7 @@ public class BinaryTree<T>{
 		Node now = root;
 		int counter = 0;
 		while(now != null){
-			if(now.giveItem().equals(item)){
+			if(now.getItem().equals(item)){
 				System.out.println("Found a node containing " + item + " at index " + counter);
 				return true;
 			}
@@ -185,7 +185,7 @@ class Node<T>{
 		this.item = item;
 	}
 	
-	public T giveItem(){
+	public T getItem(){
 		return item;
 	}
 	
