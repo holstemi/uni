@@ -19,4 +19,7 @@ class Jalkapallonpelaaja extends Pelaaja{
 	public double annaPalkka(){
 		return viikkopalkka;
 	}
+	public String toString(){
+	return "Nimi:"+this.nimi+", Pelinumero:"+ this.numero+", Pelipaikka:"+this.pelikaikka+", Oikeajalkainen:"+this.oikeajalkainen+" ,Palkka:"+this.palkka;
+	}
 }
