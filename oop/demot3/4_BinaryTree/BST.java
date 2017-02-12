@@ -35,9 +35,10 @@ public class BST<T>{
 			iterFind(id, now.left);
 		}
 		iterFind(id, now.right);
+		return now;
 	}
 	
-	public boolean add(T item, int id){
+	public void add(T item, int id){
 		Node newNode = new Node(item, id);
 		iterFind(id, root).right = newNode;
 	}
