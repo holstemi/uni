@@ -35,11 +35,14 @@ public class BinaryTree<T>{
 	*/
 	
 	public boolean find(T item){
-		Node now = root;
+		iterFind(item, root);
+	}
+	
+	public boolean iterFind(T item, Node now){
 		if (!now.getItem().equals(item)){
 			try{
-				find(now.left);
-				find(now.right);
+				iterFind(item, now.left);
+				iterFind(item, now.right);
 			}catch(Exception e){
 				System.out.println("Item not found!");
 				return false;
@@ -50,7 +53,6 @@ public class BinaryTree<T>{
 			return true;
 		}
 	}
-	
 	
 	public boolean add(T item){
     	Node newNode = new Node(item);
