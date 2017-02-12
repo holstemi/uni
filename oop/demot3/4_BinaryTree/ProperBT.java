@@ -26,7 +26,7 @@ public class ProperBT<T>{
 				iterFind(item, now.left);
 				iterFind(item, now.right);
 			}catch(Exception e){
-				System.out.println("Item not found!");
+				break;
 			}
 		}
 		System.out.println("Item found!");
