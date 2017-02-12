@@ -36,6 +36,14 @@ public class BST<T>{
 			else if(now.getId() > id){
 				now = now.left;
 			}
+			else if(now.getId() <= id && now.right == null){
+				System.out.println("Id not found!");
+				return now;
+			}
+			else if(now.getId() <= id && now.right.getId() > id ){
+				System.out.println("Id not found!");
+				return now;
+			}
 			else{
 				now = now.right;
 			}
@@ -49,8 +57,13 @@ public class BST<T>{
 		if(root == null){root = newNode;}
 		else{
 			Node tmp = find(id);
-			newNode.left = tmp.left;
-			tmp.left = newNode;
+			if(tmp.getId() > id){
+				newNode.left = tmp.left;
+				tmp.left = newNode;
+			}else{
+				newNode.right = tmp.right;
+				tmp.right = newNode;
+			}
 		}
 	}
 	
