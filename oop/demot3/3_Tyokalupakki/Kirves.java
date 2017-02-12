@@ -1,5 +1,6 @@
 public class Kirves extends Tyokalupakki{
-  public boolean onTeroitettavissa(){
+tyokalut.add(<Kirves> kirves);  
+boolean onTeroitettavissa(){
   return true;
   }
 	public boolean onLadattavissa(){
