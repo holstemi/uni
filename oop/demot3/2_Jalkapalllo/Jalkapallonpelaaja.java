@@ -1,4 +1,4 @@
-class Jalkapallonpelaaja extends Pelaaja{
+class Jalkapallonpelaaja extends Pelaaja implements Comparable<Jalkapallonpelaaja>{
 	boolean oikeajalkainen;
 	double palkka;
 	
@@ -21,5 +21,9 @@ class Jalkapallonpelaaja extends Pelaaja{
 	}
 	public String toString(){
 	return "Nimi:"+this.nimi+", Pelinumero:"+ this.numero+", Pelipaikka:"+this.pelikaikka+", Oikeajalkainen:"+this.oikeajalkainen+" ,Palkka:"+this.palkka;
+	}
+	Public int compareTo(Jalkapallonpelaaja jalkapallonpelaaja){
+		
+	
 	}
 }
