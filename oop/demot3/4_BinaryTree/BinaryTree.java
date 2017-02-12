@@ -61,7 +61,7 @@ public class BinaryTree<T>{
 			root = newNode;
 			Node[] tmp = level.get(0);
 			tmp[0] = root;
-			System.out.println("Add succesful!");
+			System.out.println("Add successful!");
 			return true;
 		}
     	else{
@@ -71,16 +71,17 @@ public class BinaryTree<T>{
 					if(x[i] == null){
 						x[i] = newNode;
 						if(i%2 == 0){
-							level.get(j-1)[i/2].left = newNode; System.out.println("Add succesful!"); return true;
+							level.get(j-1)[i/2].left = newNode; System.out.println("Add successful!"); return true;
 						}
-						else{level.get(j-1)[i/2].right = newNode; System.out.println("Add succesful!"); return true;}
+						else{level.get(j-1)[i/2].right = newNode; System.out.println("Add successful!"); return true;}
 					}
 				}
 			}
 			Node[] lvl_x = new Node[(int)Math.pow(2.0,level.size())];
 			lvl_x[0] = newNode;
+			level.get(level.size()-1)[0].left = newNode;
 			level.add(lvl_x);
-			System.out.println("Add succesful!");
+			System.out.println("Add successful!");
 			return true;
 		}
    	}
