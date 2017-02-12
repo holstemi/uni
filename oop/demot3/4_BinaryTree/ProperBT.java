@@ -16,21 +16,21 @@ public class ProperBT<T>{
 		}
 	}
 	
-	public boolean altFind(T item){
-		Node now = root;
-		if (!now.getItem().equals(item)){
+	public void alt_find(T item){
+		iterFind(item, root);
+	}
+	
+	public boolean iterFind(T item, Node now){
+		while(!now.getItem().equals(item)){
 			try{
-				altFind(now.left);
-				altFind(now.right);
+				iterFind(item, now.left);
+				iterFind(item, now.right);
 			}catch(Exception e){
 				System.out.println("Item not found!");
-				return false;
 			}
 		}
-		else{
-			System.out.println("Item found!");
-			return true;
-		}
+		System.out.println("Item found!");
+		return true;
 	}
 	
 	public boolean add(T item){
