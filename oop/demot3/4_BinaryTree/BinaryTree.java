@@ -38,8 +38,8 @@ public class BinaryTree<T>{
 		Node now = root;
 		if (!now.getItem().equals(item)){
 			try{
-				altFind(now.left);
-				altFind(now.right);
+				find(now.left);
+				find(now.right);
 			}catch(Exception e){
 				System.out.println("Item not found!");
 				return false;
@@ -71,7 +71,7 @@ public class BinaryTree<T>{
 					}
 				}
 			}
-			Node[] lvl_x = new Node[Math.pow(2,level.size())];
+			Node[] lvl_x = new Node[Math.pow(2.0,(double)level.size())];
 			lvl_x[0] = newNode;
 			level.add(lvl_x);
 		}
