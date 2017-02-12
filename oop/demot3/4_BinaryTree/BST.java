@@ -22,40 +22,39 @@ public class BST<T>{
 		iterFind(id, root);
 	}
 	
-	public void iterFind(int id, Node now){
-		if(now.getId()==id){
-			System.out.println("Found!");
-		}
-		else if(now.getId() < id && now.right.getId() > id){
-			System.out.println("No nodes with such id in tree");
-		}
-		else if(now.getId() > id){
-			if(now.left != null){
+	public Node iterFind(int id, Node now){
+		while(now != null){
+			if(now.getId() == id){
+				System.out.println("Found!");
+				return true;
+			}
+			else if(now.getId() > id){
 				iterFind(id, now.left);
-			}else{System.out.println("No nodes with such id in tree");}
-		}
-		else{
-			if(now.right != null){
+			}
+			else{
 				iterFind(id, now.right);
-			}else{System.out.println("No nodes with such id in tree");}
+				}
+			}
 		}
+		System.out.println("Id not found!");
+		return null;
 	}
 	
 	public Node iterAdd(int id, Node now){
-		if(now.getId()==id){
-			return now;
-		}
-		else if(now.getId() > id){
-			if(now.left != null){
+		while(now != null){
+			if(now.getId() >= id && now.left.getId() < id){
+				return now;
+			}
+			else if(now.getId() > id){
 				iterAdd(id, now.left);
-			}else{return now;}
-		}
-		else{
-			if(now.right != null){
+			}
+			else{
 				iterAdd(id, now.right);
-			}else{return now;}
+				}
+			}
 		}
-		return now;
+		System.out.println("Id not found!");
+		return null;
 	}
 	
 	public void add(T item, int id){
