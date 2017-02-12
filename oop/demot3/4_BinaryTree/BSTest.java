@@ -1,7 +1,7 @@
-public class ProperBTest{
+public class BSTest{
 	public static void main(String[] args) {
 
-    	ProperBT<Integer> B = new ProperBT<Integer>();
+    	BST<Integer> B = new BST<Integer>();
     	B.add(1);
     	B.print();
     	B.add(5);

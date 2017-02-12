@@ -1,11 +1,7 @@
-public class ProperBT<T>{
+public class BST<T>{
 	
 	private Node<T> root;
 	int levels;
-	
-	public ProperBT<T>(){
-		root = null;
-	}
 	
 	public void print(){
 		Node now = root;
@@ -16,22 +12,34 @@ public class ProperBT<T>{
 		}
 	}
 	
-	public void alt_find(T item){
-		iterFind(item, root);
+	public void find(int id){ //BST:n lapikayntiin
+		iterFind(id, root);
 	}
 	
-	public boolean iterFind(T item, Node now){
-		while(!now.getItem().equals(item)){
-			try{
-				iterFind(item, now.left);
-				iterFind(item, now.right);
-			}catch(Exception e){
-				break;
-			}
+	public Node iterFind(int id, Node now){
+		if(now.getId()==id){
+			System.out.println("Found!");
+			return now;
 		}
-		System.out.println("Item found!");
-		return true;
+		else if(now.getId() < id && now.right.getId() > id){
+			System.out.println("No nodes with such id in tree");
+			return now;
+		}
+		else if(now.getId() > id){
+			iterFind(id, now.left);
+		}
+		iterFind(id, now.right);
 	}
+	
+	public boolean add(T item, int id){
+		Node newNode = new Node(item, id);
+		iterFind(id, root).right = newNode;
+	}
+	
+	/*
+	
+	YLEISELLE PUULLE
+	------------------------------------------------
 	
 	public boolean add(T item){
 		Node newNode = new Node(item);
@@ -81,7 +89,7 @@ public class ProperBT<T>{
 			catch(Exception e){System.out.println("Item not found!");return false;}
 		}
 	}
-	
+
 	public void print(){
 		Node now = root;
 		
@@ -124,21 +132,27 @@ public class ProperBT<T>{
 			else{now = now.left;}
 		}
 		return now;
-	}
+	}*/
 }
 
 class Node<T>{
 	private T item;
+	private int id;
 	Node parent;
 	Node left;
 	Node right;
 	
-	public Node<T>(T item){
+	public Node<T>(T item, int id){
 		this.item = item;
+		this.id = id;
 	}
 	
 	public T getItem(){
 		return item;
+	}
+	
+	public int getId(){
+		return id;
 	}
 	
 	public int getLevel(){
