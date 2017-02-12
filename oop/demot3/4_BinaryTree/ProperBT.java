@@ -129,9 +129,9 @@ public class ProperBT<T>{
 
 class Node<T>{
 	private T item;
-	Node<T> parent;
-	Node<T> left;
-	Node<T> right;
+	Node parent;
+	Node left;
+	Node right;
 	
 	public Node<T>(T item){
 		this.item = item;
