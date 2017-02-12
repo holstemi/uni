@@ -1,7 +1,7 @@
 public class Puukko extends Tyokalupakki{
 public Puukko(){
 	private String nimi = new String("Puukko");
-	tyokalut.add(<Puukko> puukko);
+	tyokalut.add(this);
 }
 public boolean onTeroitettavissa(){
   return true;

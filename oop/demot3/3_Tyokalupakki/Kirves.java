@@ -1,7 +1,7 @@
 public class Kirves extends Tyokalupakki{
 public Kirves(){
 	private String nimi = new String("Kirves");
-	tyokalut.add(<Kirves> kirves);
+	tyokalut.add(this);
 }
 boolean onTeroitettavissa(){
   return true;

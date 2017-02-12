@@ -1,7 +1,7 @@
 public class Saha extends Tyokalupakki{
 public Saha(){
 	private String nimi = new String("Saha");
-	tyokalut.add(<Saha> saha);
+	tyokalut.add(this);
 }
 public boolean onTeroitettavissa(){
   return true;
