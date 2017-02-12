@@ -1,6 +1,6 @@
 public class BST<T>{
 	
-	private Node<T> root;
+	public static Node<T> root;
 	int levels;
 	
 	public BST(){
@@ -12,17 +12,14 @@ public class BST<T>{
 	}
 	public void iterPrint(Node now){
 		 if (now != null){
-            System.out.println(now.getItem());
-            iterPrint(now.left);
+			iterPrint(now.left);
+            System.out.println(now.getItem()+" ");
             iterPrint(now.right);
 		}
 	}
 	
 	public void find(int id){ //BST:n lapikayntiin
-		iterFind(id, root);
-	}
-	
-	public Node iterFind(int id, Node now){
+		Node now = root;
 		while(now != null){
 			if(now.getId() == id){
 				System.out.println("Found!");
@@ -33,10 +30,10 @@ public class BST<T>{
 				return now;
 			}
 			else if(now.getId() > id){
-				iterFind(id, now.left);
+				now = now.left;
 			}
 			else{
-				iterFind(id, now.right);
+				now = now.right;
 			}
 		}
 		System.out.println("Id not found!");
@@ -46,7 +43,11 @@ public class BST<T>{
 	public void add(T item, int id){
 		Node newNode = new Node(item, id);
 		if(root == null){root = newNode;}
-		else{iterFind(id, root).right = newNode;}
+		else{
+			Node tmp = find(id);
+			newNode.left = tmp.left;
+			tmp.left = newNode;
+		}
 	}
 	
 	/*
