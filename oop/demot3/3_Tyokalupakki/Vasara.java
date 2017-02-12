@@ -1,7 +1,7 @@
 public class Vasara extends Tyokalupakki{
 public Vasara(){
 	private String nimi = new String("Vasara");
-	tyokalut.add(<Vasara> vasara);
+	tyokalut.add(this);
 }
 public boolean onTeroitettavissa(){
   return false;
