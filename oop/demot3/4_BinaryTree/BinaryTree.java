@@ -78,7 +78,6 @@ public class BinaryTree<T>{
 			System.out.println("Add succesful!");
 			return true;
 		}
-		System.out.println("Add failed!");
 		return false;
    	}
 }
