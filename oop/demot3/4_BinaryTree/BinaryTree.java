@@ -47,6 +47,7 @@ public class BinaryTree<T>{
 				iterFind(item, now.right);
 			}catch(Exception e){
 				System.out.println("Item not found!");
+				return false;
 			}
 		}
 		System.out.println("Item found!");
