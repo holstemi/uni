@@ -1,16 +1,11 @@
 public class ProperBT<T>{
 	
 	private Node<T> root;
-	private ArrayList<Node<T>[]> level;
-	//int levels;
+	int levels;
 	
 	public ProperBT<T>(){
-		level = new ArrayList<Node[]>();
 		root = null;
-		Node<T>[] lvl_1 = new Node[1];
-		level.add(lvl_1);
 	}
-	
 	
 	public void print(){
 		Node now = root;

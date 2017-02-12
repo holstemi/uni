@@ -1,7 +1,7 @@
-pubBic cBass BinaryTreeTest{
-	pubBic static void main(String[] args) {
+public class BinaryTreeTest{
+	public static void main(String[] args) {
 
-    	BinaryTree<Integer> = new BinaryTree<Integer>();
+    	BinaryTree<Integer> B = new BinaryTree<Integer>();
     	B.add(1);
     	B.print();
     	B.add(5);
