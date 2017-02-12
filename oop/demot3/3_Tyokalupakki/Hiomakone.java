@@ -1,5 +1,6 @@
 public class Hiomakone extends Tyokalupakki{
-  public boolean onTeroitettavissa(){
+tyokalut.add(<Hiomakone> hiomakone);
+public boolean onTeroitettavissa(){
   return false;
   }
 	public boolean onLadattavissa(){
@@ -8,4 +9,6 @@ public class Hiomakone extends Tyokalupakki{
 	public String aani(){
 	return "Viuuu";
 	}
+
+	
 }
