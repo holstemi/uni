@@ -6,7 +6,7 @@ public class BinaryTree<T>{
 	private Node<T> root;
 	private ArrayList<Node<T>[]> level;
 	
-	public BinaryTree<T>(){
+	public BinaryTree(){
 		level = new ArrayList<Node<T>[]>();
 		root = null;
 		Node<T>[] lvl_1 = new Node[1];
@@ -32,8 +32,9 @@ public class BinaryTree<T>{
             altPrint(now.right);
 		}
 	}
+	*/
 	
-	public boolean altFind(T item){
+	public boolean find(T item){
 		Node now = root;
 		if (!now.getItem().equals(item)){
 			try{
@@ -49,7 +50,7 @@ public class BinaryTree<T>{
 			return true;
 		}
 	}
-	*/
+	
 	
 	public boolean add(T item){
     	Node newNode = new Node(item);
@@ -70,26 +71,11 @@ public class BinaryTree<T>{
 					}
 				}
 			}
-			Node[] lvl_x = new Node[Math.Pow(2,level.size())];
+			Node[] lvl_x = new Node[Math.pow(2,level.size())];
 			lvl_x[0] = newNode;
 			level.add(lvl_x);
 		}
    	}
-
-	public boolean find(T item){
-		Node now = root;
-		int counter = 0;
-		while(now != null){
-			if(now.getItem().equals(item)){
-				System.out.println("Found a node containing " + item + " at index " + counter);
-				return true;
-			}
-			now = now.next;
-			counter++;
-		}
-		System.out.println("Error: No node found with given data!");
-		return false;
-	}
 }
 
 class Node<T>{
