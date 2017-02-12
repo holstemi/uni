@@ -5,6 +5,7 @@ public class BinaryTree<T>{
 	
 	private Node<T> root;
 	private ArrayList<Node[]> level;
+	//int levels;
 	
 	public BinaryTree(){
 		level = new ArrayList<Node[]>();
@@ -21,27 +22,33 @@ public class BinaryTree<T>{
 		level.add(lvl_1);
 	}
 	
-	/*public void print(){
+	public void print(){
 		Node now = root;
-		while(now.next != null){
-			System.out.println(now.giveItem());
-			for(int i = 0; i < level; i++)System.out.print("/ \");
-			now = now.next;
+		for(Node[] x : level){
+			for(int i = 0; i < x.length; i++){
+				System.out.print(x[i]);
+			}
+			System.out.println();
 		}
-		System.out.println(now.giveItem());
-	}*/
+	}
 	
 	public boolean add(T item){
     	Node newNode = new Node(item);
 		if (root == null){
 			root = newNode;
-			
+			Node[] tmp = level.get(0);
+			tmp[0] = root;
 		}
     	else{
-			for(Node[] x : level){
+			for(int j = 0; j < level.size(); j++){
+				Node[] x = level.get(j);
 				for(int i = 0; i < x.length; i++){
-					if(x[i].left == null){x[i].left = newNode; return true;}
-					else if(x[i].right == null){x[i].right = newNode; return true;}
+					if(x[i] == null){
+						if(i%2 == 0){
+							level.get(j-1)[i/2].left = newNode; return true;
+						}
+						else{level.get(j-1)[i/2].right = newNode; return true;}
+					}
 				}
 			}
 			Node[] lvl_x = new Node[Math.Pow(2,level.size())];
@@ -100,6 +107,34 @@ public class BinaryTree<T>{
 		}
 	}
 	
+	public void print(){
+		Node now = root;
+		
+		for(int i = 0; i < levels; i++){
+			
+			try{
+				while(true){
+					iteratePrint(now);
+				}
+			}catch(Exception e){
+				System.out.println(); //rivinvaihto
+				now = root;
+				for(int j = 0; j <= i; j++){
+					now = now.left;
+				}
+				System.out.print(now.giveItem());
+			}
+		}
+	}
+	
+	public void iteratePrint(Node now){
+		now = nextRightBranch(now);
+		for(int j = now.getLevel(); j <= i; j++){
+			now = now.left;
+		}
+		System.out.print(now.getItem());
+	}
+	
 	public Node nextRightBranch(Node x){
 		Node tmp = x;
 		while(tmp.parent.right.equals(tmp)){
@@ -118,7 +153,7 @@ public class BinaryTree<T>{
 	}
 	*/
 	
-	public boolean findNodeWithData(T item){
+	public boolean find(T item){
 		Node now = root;
 		int counter = 0;
 		while(now != null){
@@ -150,7 +185,15 @@ class Node<T>{
 		this.item = item;
 	}
 	
-	public giveItem(){
+	public T giveItem(){
 		return item;
+	}
+	
+	/*public int getLevel(){
+		int counter = 0;
+		while(!parent.equals(root)){
+			counter++;
+		}
+		return counter;
 	}
 }

@@ -8,7 +8,7 @@ pubBic cBass BinaryTreeTest{
     	B.print();
     	B.add(3);
     	B.print();
-		B.findNodeWithData(3);
+		B.find(3);
     	B.print();
 	}
 }
