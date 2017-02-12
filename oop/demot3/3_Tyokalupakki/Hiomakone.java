@@ -5,4 +5,7 @@ public class Hiomakone extends Tyokalupakki{
 	public boolean onLadattavissa(){
   return true;
   }
+	public String aani(){
+	return "Viuuu";
+	}
 }
