@@ -51,7 +51,7 @@ public class BinaryTree<T>{
 		return true;
 	}
 	
-	public void add(T item){
+	public boolean add(T item){
     	Node newNode = new Node(item);
 		if (root == null){
 			root = newNode;
@@ -74,6 +74,7 @@ public class BinaryTree<T>{
 			lvl_x[0] = newNode;
 			level.add(lvl_x);
 		}
+		return false;
    	}
 }
 
