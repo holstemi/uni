@@ -49,7 +49,6 @@ public class BST<T>{
 			}
 			else{
 				iterAdd(id, now.right);
-				}
 			}
 		}
 		System.out.println("Id not found!");
