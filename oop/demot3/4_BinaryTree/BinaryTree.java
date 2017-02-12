@@ -5,7 +5,6 @@ public class BinaryTree<T>{
 	
 	private Node<T> root;
 	private ArrayList<Node[]> level;
-	//int maxNodeLvl;
 	
 	public BinaryTree(){
 		level = new ArrayList<Node[]>();
@@ -59,9 +58,8 @@ public class BinaryTree<T>{
 		while(true){
 			
 			Node bottom = checkLeftBranch(now);
-			int nodeLvl = bottom.giveLvl();
 			
-			if(bottom.right == null){
+			if(bottom.right == null && bottom.left != null){
 				bottom.right = newNode; 
 				newNode.parent = bottom; 
 				return true;
@@ -83,6 +81,25 @@ public class BinaryTree<T>{
 		}
 	}
 	
+	public boolean find(T data){
+		Node now = root;
+		
+		while(tmp.left != null){
+			if(now.giveItem().equals(data)){System.out.println("Item was found!"); return true;}
+			else{now = now.left;}
+		}
+		while(true){
+			if(now.giveItem().equals(item)){System.out.println("Item was found!"); return true;}
+			
+			Node bottom = checkLeftBranch(now);
+			
+			now = bottom;
+			if(now.giveItem().equals(item)){System.out.println("Item was found!"); return true;}
+			try{now = nextRightBranch(now);}
+			catch(Exception e){System.out.println("Item not found!");return false;}
+		}
+	}
+	
 	public Node nextRightBranch(Node x){
 		Node tmp = x;
 		while(tmp.parent.right.equals(tmp)){
@@ -98,13 +115,6 @@ public class BinaryTree<T>{
 			else{now = now.left;}
 		}
 		return now;
-	}
-	
-	public void addToRight(Node now){
-		if(checkLeftBranch(now).right == null){
-			checkLeftBranch(now).right = newNode; 
-			newNode.parent = checkLeftBranch(now); 
-		}
 	}
 	*/
 	
@@ -135,7 +145,6 @@ class Node<T>{
 	//Node parent;
 	Node left;
 	Node right;
-	//int lvl;
 	
 	public Node(T item){
 		this.item = item;
@@ -144,8 +153,4 @@ class Node<T>{
 	public giveItem(){
 		return item;
 	}
-	
-	/*public int giveLvl(){
-		return lvl;
-	}*/
 }
