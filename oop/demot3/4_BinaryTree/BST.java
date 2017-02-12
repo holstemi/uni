@@ -8,11 +8,13 @@ public class BST<T>{
 	}
 	
 	public void print(){
-		Node now = root;
-        if (now != null){
+		iterPrint(root);
+	}
+	public void iterPrint(Node now){
+		 if (now != null){
             System.out.println(now);
-            print(now.left);
-            print(now.right);
+            iterPrint(now.left);
+            iterPrint(now.right);
 		}
 	}
 	
