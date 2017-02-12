@@ -12,7 +12,7 @@ public class BST<T>{
 	}
 	public void iterPrint(Node now){
 		 if (now != null){
-            System.out.println(now);
+            System.out.println(now.getItem());
             iterPrint(now.left);
             iterPrint(now.right);
 		}
@@ -22,26 +22,39 @@ public class BST<T>{
 		iterFind(id, root);
 	}
 	
-	public Node iterFind(int id, Node now){
+	public void iterFind(int id, Node now){
 		if(now.getId()==id){
 			System.out.println("Found!");
-			return now;
 		}
 		else if(now.getId() < id && now.right.getId() > id){
 			System.out.println("No nodes with such id in tree");
-			return now;
 		}
 		else if(now.getId() > id){
 			iterFind(id, now.left);
 		}
 		iterFind(id, now.right);
-		return now;
+	}
+	
+	public Node iterAdd(int id, Node now){
+		if(now.getId()==id){
+			return now;
+		}
+		else if(now.getId() > id){
+			if(now.left != null){
+				iterAdd(id, now.left);
+			}else{return now;}
+		}
+		else{
+			if(now.right != null){
+				iterAdd(id, now.right);
+			}else{return now;}
+		}
 	}
 	
 	public void add(T item, int id){
 		Node newNode = new Node(item, id);
 		if(root == null){root = newNode;}
-		else{iterFind(id, root).right = newNode;}
+		else{iterAdd(id, root).right = newNode;}
 	}
 	
 	/*
