@@ -57,6 +57,7 @@ public class BinaryTree<T>{
 			root = newNode;
 			Node[] tmp = level.get(0);
 			tmp[0] = root;
+			return true;
 		}
     	else{
 			for(int j = 0; j < level.size(); j++){
@@ -71,9 +72,11 @@ public class BinaryTree<T>{
 				}
 			}
 			Node[] lvl_x = new Node[(int)Math.pow(2.0,level.size())];
+			System.out.println((int)Math.pow(2.0,level.size()));
 			lvl_x[0] = newNode;
 			level.add(lvl_x);
 			System.out.println("Add succesful!");
+			return true;
 		}
 		System.out.println("Add failed!");
 		return false;
