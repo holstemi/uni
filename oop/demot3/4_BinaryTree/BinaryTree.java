@@ -73,7 +73,7 @@ public class BinaryTree<T>{
 					}
 				}
 			}
-			Node[] lvl_x = new Node[Math.pow(2.0,(double)level.size())];
+			Node[] lvl_x = new Node[(int)Math.pow(2.0,level.size())];
 			lvl_x[0] = newNode;
 			level.add(lvl_x);
 		}
