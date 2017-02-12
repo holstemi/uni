@@ -9,6 +9,7 @@ public class BinaryTreeTest{
     	B.add(3);
     	B.print();
 		B.find(3);
+		B.find(8);
 		B.add(42);
 		B.add(2021);
 		B.add(364);
@@ -16,6 +17,6 @@ public class BinaryTreeTest{
 		B.add(769);
 		B.add(6);
     	B.print();
-		B.altPrint();
+		//B.altPrint();
 	}
 }

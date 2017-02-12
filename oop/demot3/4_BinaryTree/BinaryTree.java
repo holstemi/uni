@@ -26,7 +26,7 @@ public class BinaryTree<T>{
 	}
 	
 	
-	public void altPrint(){
+	/*public void altPrint(){
         iterPrint(root);
 	}
 	
@@ -36,32 +36,39 @@ public class BinaryTree<T>{
             iterPrint(now.left);
             iterPrint(now.right);
 		}
-	}	
+	}
+
+	public Node iterPrint(Node now){
+		Node result = null;
+       		if(now.left != null)
+        	    result = iterPrint(now.left);
+        	if(result ==null && now.right != null)
+            		result = iterPrint(now.right);
+		System.out.println(now.getItem());
+        	return result;
+	}*/
 	
 	public void find(T item){
-		iterFind(item, root);
-	}
-	
-	public boolean iterFind(T item, Node now){
-		try{
-			while(!now.getItem().equals(item)){
-				try{
-					iterFind(item, now.left);
-					iterFind(item, now.right);
-				}catch(Exception e){
-					break;
-				}
-			}
+		if(iterFind(item, root) != null){
 			System.out.println("Item found!");
-			return true;
-		}catch(Exception e){	
-			System.out.println("Item not found!");
-		}
-		return false;
+		}else{System.out.println("Item not found!");}
+	}
+
+	
+	
+	public Node iterFind(T item, Node now){
+		Node result = null;
+       		if(now.left != null)
+        	    result = iterFind(item, now.left);
+        	if(now.getItem().equals(item))
+            		return now;
+        	if(result ==null && now.right != null)
+            		result = iterFind(item, now.right);
+        	return result;
 	}
 	
 	public boolean add(T item){
-    	Node newNode = new Node(item);
+    		Node newNode = new Node(item);
 		if (root == null){
 			root = newNode;
 			Node[] tmp = level.get(0);
