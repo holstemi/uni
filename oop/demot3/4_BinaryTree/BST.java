@@ -25,7 +25,7 @@ public class BST<T>{
 				System.out.println("Found!");
 				return now;
 			}
-			else if(now.getId() >= id && now.left.getId() < id){
+			else if(now.getId() >= id && (now.left.getId() < id || now.left == null)){
 				System.out.println("Id not found!");
 				return now;
 			}
