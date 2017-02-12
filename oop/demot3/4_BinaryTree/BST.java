@@ -11,8 +11,8 @@ public class BST<T>{
 		Node now = root;
         if (now != null){
             System.out.println(now);
-            altPrint(now.left);
-            altPrint(now.right);
+            print(now.left);
+            print(now.right);
 		}
 	}
 	
@@ -146,7 +146,7 @@ class Node<T>{
 	Node left;
 	Node right;
 	
-	public Node<T>(T item, int id){
+	public Node(T item, int id){
 		this.item = item;
 		this.id = id;
 	}
@@ -159,11 +159,11 @@ class Node<T>{
 		return id;
 	}
 	
-	public int getLevel(){
+	/*public int getLevel(){
 		int counter = 0;
 		while(!parent.equals(root)){
 			counter++;
 		}
 		return counter;
-	}
+	}*/
 }
