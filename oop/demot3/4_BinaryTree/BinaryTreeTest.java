@@ -16,5 +16,6 @@ public class BinaryTreeTest{
 		B.add(769);
 		B.add(6);
     	B.print();
+		B.altPrint();
 	}
 }

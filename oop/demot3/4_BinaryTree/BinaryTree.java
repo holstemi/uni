@@ -25,16 +25,18 @@ public class BinaryTree<T>{
 		}
 	}
 	
-	/*
+	
 	public void altPrint(){
-		Node now = root;
-        if (now != null){
-            System.out.println(now);
-            altPrint(now.left);
-            altPrint(now.right);
-		}
+        iterPrint(root);
 	}
-	*/
+	
+	public void iterPrint(Node now){
+		if (now != null){
+            System.out.println(now);
+            iterPrint(now.left);
+            iterPrint(now.right);
+		}
+	}	
 	
 	public void find(T item){
 		iterFind(item, root);
