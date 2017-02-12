@@ -18,7 +18,7 @@ public class BST<T>{
 		}
 	}
 	
-	public void find(int id){ //BST:n lapikayntiin
+	public Node find(int id){ //BST:n lapikayntiin
 		Node now = root;
 		while(now != null){
 			if(now.getId() == id){
