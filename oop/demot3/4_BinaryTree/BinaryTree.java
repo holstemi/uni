@@ -34,27 +34,24 @@ public class BinaryTree<T>{
 	}
 	*/
 	
-	public boolean find(T item){
+	public void find(T item){
 		iterFind(item, root);
 	}
 	
 	public boolean iterFind(T item, Node now){
-		if (!now.getItem().equals(item)){
+		while(!now.getItem().equals(item)){
 			try{
 				iterFind(item, now.left);
 				iterFind(item, now.right);
 			}catch(Exception e){
 				System.out.println("Item not found!");
-				return false;
 			}
 		}
-		else{
-			System.out.println("Item found!");
-			return true;
-		}
+		System.out.println("Item found!");
+		return true;
 	}
 	
-	public boolean add(T item){
+	public void add(T item){
     	Node newNode = new Node(item);
 		if (root == null){
 			root = newNode;
