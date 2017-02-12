@@ -75,8 +75,8 @@ public class BinaryTree<T>{
 			level.add(lvl_x);
 			System.out.println("Add succesful!");
 		}
-		return false;
 		System.out.println("Add failed!");
+		return false;
    	}
 }
 
