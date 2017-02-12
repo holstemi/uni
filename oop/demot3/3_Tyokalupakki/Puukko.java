@@ -1,4 +1,5 @@
 public class Puukko extends Tyokalupakki{
+tyokalut.add(<Puukko> puukko);
 public boolean onTeroitettavissa(){
   return true;
   }
