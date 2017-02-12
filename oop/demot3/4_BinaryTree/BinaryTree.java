@@ -18,6 +18,7 @@ public class BinaryTree<T>{
 		for(Node[] x : level){
 			for(int i = 0; i < x.length; i++){
 				if(x[i] != null){
+					for(int k = 0; k < level.size()-i; k++){System.out.print(" ");}
 					System.out.print(x[i].getItem());
 				}
 			}
