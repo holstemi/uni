@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+
 public class Joukkue{
 	public ArrayList<Pelaaja> pelaajat;
+	protected static int PALKKAKATTO;
 	
 	public Joukkue(){
-		pelaajat = new ArrayList<Pelaaja>()
+		pelaajat = new ArrayList<Pelaaja>();
+	
 	}
 	
 	public void lisaaPelaaja(String n, int num, String pp){
@@ -13,7 +17,7 @@ public class Joukkue{
 	public void poistaPelaaja(int num){
 		for (Pelaaja x : pelaajat){
 			if(x.annaNumero() == num){
-				pelaajat.remove(a);
+				pelaajat.remove(x);
 			}
 		}
 	}
@@ -25,4 +29,13 @@ public class Joukkue{
 			System.out.println(x.annaPelipaikka());
 		}
 	}
+	public void asetaPALKKAKATTO(int a){
+		Joukkue.PALKKAKATTO = a;
+		
+		
+	}
+	public int annaPALKKAKATTO(){
+		return Joukkue.PALKKAKATTO;
+	}
+
 }
