@@ -21,8 +21,8 @@ class Jalkapallojoukkue extends Joukkue{
 		else{System.out.println("Joukkue taynna");}
 	}
 	public void lisaaPelaaja(Jalkapallonpelaaja j) {
-		pelaajat.add(j);
 		try {
+			pelaajat.add(j);
 			lisaaBudjetti(j.annaPalkka());
 		} catch (BudjettiYlitetty e) {
 			
