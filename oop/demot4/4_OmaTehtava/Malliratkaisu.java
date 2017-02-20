@@ -10,9 +10,9 @@ public class Malliratkaisu{
 
 class LHM<T>{
 	
-	Node<T> first; //the first node
-	Node<T> last; //the last node
-	int size; //size of the list
+	Node<T> first;
+	Node<T> last;
+	int size;
 	
 	public LHM(){
 		size = 0;
@@ -27,21 +27,21 @@ class LHM<T>{
 		System.out.println(now.item+"_"+now.key);
 	}
 	
-	public void put(T item, int key){ //add an item to the end of the list
+	public void put(T item, int key){
     		Node newNode = new Node(T item, int key);
-			if (first == null){
-				first = newNode;
-			}
+		if (first == null){
+			first = newNode;
+		}
     		else{
-				Node now = first;
-				while(now.next != null){
-					now = now.next;
-				}
-				now.next = newNode;
-				newNode.previous = now;
-				size++;
-				System.out.println(item + " added to the end of our LinkedHashMap!");
+			Node now = first;
+			while(now.next != null){
+				now = now.next;
 			}
+			now.next = newNode;
+			newNode.previous = now;
+			size++;
+			System.out.println(item + " added to the end of our LinkedHashMap!");
+		}
    	}
 	
 	public boolean remove(int key){
