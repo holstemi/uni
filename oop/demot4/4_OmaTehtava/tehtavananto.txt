@@ -1,1 +1,1 @@
-jtnjtjnjtn
+Toteuta HashMap uudelleen linkeldist tehtävää hyödyntäen
