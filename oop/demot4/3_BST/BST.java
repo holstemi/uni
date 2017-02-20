@@ -25,41 +25,32 @@ public class BST<T extends Comparable<T>>{
 		else{System.out.println("Found!");}
 	}
 	
-	public Node seek(int id){ //BST:n lapikayntiin
+	public Node seek(T item){ //BST:n lapikayntiin
 		Node now = root;
 		while(now != null){
-			if(now.getId() == id){
-				return null;
+			if(item.compareTo(now.getItem()) == 1 && now.left != null){
+				now = now.right;
 			}
-			else if(now.getId() > id && now.left == null){
+			else if(item.compareTo(now.getItem()) == 1 && now.left == null){
 				return now;
 			}
-			else if(now.getId() > id && now.left.getId() < id ){
-				return now;
-			}
-			else if(now.getId() > id){
+			else if(item.compareTo(now.getItem()) == -1 && now.left != null){
 				now = now.left;
 			}
-			else if(now.getId() < id && now.right == null){
+			else if(item.compareTo(now.getItem()) == -1 && now.left == null){
 				return now;
-			}
-			else if(now.getId() < id && now.right.getId() > id ){
-				return now;
-			}
-			else{
-				now = now.right;
 			}
 		}
 		return null;
 	}
 	
-	public void add(T item, int id){
-		Node newNode = new Node(item, id);
+	public void add(T item){
+		Node newNode = new Node(item);
 		if(root == null){root = newNode;}
 		else{
-			Node tmp = seek(id);
+			Node tmp = seek(item);
 			if(tmp != null){
-				if(tmp.getId() > id){
+				if(item.compareTo(tmp.getItem()) == 1){
 					newNode.left = tmp.left;
 					tmp.left = newNode;
 				}else{
@@ -72,27 +63,31 @@ public class BST<T extends Comparable<T>>{
 	}
 }
 
-class Node<T>{
+class Node<T extends Comparable<T>>{
 	private T item;
-	private int id;
+	//private int id;
 	//Node parent;
 	Node left;
 	Node right;
 	
-	public Node(T item, int id){
+	/*public Node(T item, int id){
 		this.item = item;
 		this.id = id;
+	}*/
+	
+	public Node(T item){
+		this.item = item;
 	}
 	
 	public T getItem(){
 		return item;
 	}
 	
-	public int getId(){
+	/*public int getId(){
 		return id;
 	}
 	
-	/*public int getLevel(){
+	public int getLevel(){
 		int counter = 0;
 		while(!parent.equals(root)){
 			counter++;
