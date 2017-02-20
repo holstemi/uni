@@ -13,13 +13,13 @@ public class BST<T extends Comparable<T>>{
 	public void iterPrint(Node now){
 		 if (now != null){
 			iterPrint(now.left);
-            System.out.println(now.getItem()+" ");
-            iterPrint(now.right);
+           		System.out.println(now.getItem()+" ");
+            		iterPrint(now.right);
 		}
 	}
 	
-	public void find(int id){
-		if(seek(id) != null){
+	public void find(T item){
+		if(seek(item) != null){
 			System.out.println("Item with given id not found!");
 		}
 		else{System.out.println("Found!");}
@@ -40,6 +40,7 @@ public class BST<T extends Comparable<T>>{
 			else if(item.compareTo(now.getItem()) == -1 && now.left == null){
 				return now;
 			}
+			else{return null;}
 		}
 		return null;
 	}
