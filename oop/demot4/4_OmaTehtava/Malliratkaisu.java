@@ -1,12 +1,20 @@
 public class Malliratkaisu{
+	public static void main(String[] args) {
+		LHM<String> t = new LHM<String>();
+		t.put();
+		t.get();
+		t.remove();
+		t.size();
+	}
+}
 
-}public class LinkedList<T>{
+class LHM<T>{
 	
 	Node<T> first; //the first node
 	Node<T> last; //the last node
 	int size; //size of the list
 	
-	public LinkedList(){
+	public LHM(){
 		size = 0;
 	}
 	
