@@ -2,21 +2,21 @@ package flappy;
 
 import java.awt.*;
 
-public class Bird {
+public class Bird { //TÄMÄN PITÄISI OLLA OK
 	private int y;
-	private int x;
+	public final int x;
 	private int vy;
-	private int vx;
 	public Image lintu;
 
 	public Bird(){
-		lintu = Toolkit.getDefaultToolkit().getImage("lintu.png"); //linnun kuva puuttuu vielä
+		lintu = Toolkit.getDefaultToolkit().getImage("lintu.png"); //HUOM! linnun kuva puuttuu vielä
 		x = 400;
 		y = 400;
+		vy = -5;
 	}
 
-	public void jump(){
-		setVY(5); //tätä säädettävä vielä valittavan kuvan koon mukaan
+	public void move(int amount){
+		setY(this.y + amount);
 	}
 
 	public int getY() {
@@ -27,14 +27,6 @@ public class Bird {
 		this.y = y;
 	}
 
-	public int getX() {
-		return x;
-	}
-
-	public void setX(int x) {
-		this.x = x;
-	}
-
 	public int getVY() {
 		return vy;
 	}
@@ -42,12 +34,6 @@ public class Bird {
 	public void setVY(int vy) {
 		this.vy = vy;
 	}
+	
 
-	public int getVX() {
-		return vx;
-	}
-
-	public void setVX(int vx) {
-		this.vx = vx;
-	}
 }
