@@ -3,7 +3,7 @@ package flappy;
 import java.awt.Rectangle;
 import java.util.Random;
 
-public class Pipe extends Rectangle { //TÄMÄN PITÄISI OLLA OK
+public class Pipe extends Rectangle { //PITÄISI TOIMIA
 
 	/**
 	 * 

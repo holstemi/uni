@@ -10,12 +10,6 @@ public class Game {
 		score = 0;
 	}
 	
-	/*public void start(){
-		while(play){
-			
-		}
-	}*/
-	
 	public void incScore(){
 		score++;
 	}

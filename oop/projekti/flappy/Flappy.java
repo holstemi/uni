@@ -9,18 +9,16 @@ public class Flappy{
 		while(g.play()){
 			
 			try{
-				moveStuff(b,p);
 				checkHit(g,b,p);
+				
 				//SCREEN REFERSH TÄHÄN
 				
-				//jtn koodia
-				
-				
+				moveStuff(b,p);
 				if(!g.play()){
 					throw new Exception();
 				}
 			}catch(Exception e){
-				System.out.println("Game over"); //HEITTÄÄ GAME OVER RUUDUN
+				System.out.println("Game over. Score: " + g.getScore()); //HEITTÄÄ GAME OVER RUUDUN JA NÄYTTÄÄ SCOREN
 			}
 		}
 	}
@@ -30,7 +28,7 @@ public class Flappy{
 			if(b.getY() <= p.getDown().getY() || b.getY() >= p.getUp().height){
 				g.setPlay(false); //osuma --> asetetaan peli loppumaan
 			}
-			g.incScore();
+			g.incScore(); //lintu menee putkien välistä, joten tulos paranee (HUOM: putken leveys nyt 10)
 		}
 	}
 	
@@ -40,5 +38,6 @@ public class Flappy{
 		}  
 		else{b.move(-5);}
 		p.move(10); //putki liikkuu aina esimerkiksi 10 koordinaattia x suunnassa
+		//Se, että mitä taphtuu jos lintu lentää liian ylös tai kun putki ajautuu ulos näytöstä, ei ole vielä handlattu
 	}
 }
