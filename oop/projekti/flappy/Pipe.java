@@ -3,11 +3,20 @@ package flappy;
 import java.awt.Rectangle;
 import java.util.Random;
 
-public class Pipe extends Rectangle { //PITÄISI TOIMIA
+public class Pipe extends Rectangle {
 
 	/**
 	 * 
+	 * PUTKI -OLIO
+	 * 
+	 * @param up				Ylempi putki
+	 * @param down				Alempi putki
+	 * 
+	 * Metodit: 
+	 * + Getterit ja setterit
+	 * + move(int x)			Siirtää molempia putkia samaan aikaan vasemmalle x pikselin verran
 	 */
+	
 	private static final long serialVersionUID = 1L;
 	private Rectangle up;
 	private Rectangle down;

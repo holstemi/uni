@@ -2,6 +2,13 @@ package flappy;
 
 public class Flappy{
 	
+	/**
+	 * 
+	 * MAIN -LUOKKA, JOSSA AJATEAAN OHJELMA
+	 * 
+	 * @param args
+	 */
+	
 	public static void main(String args[]){
 		Game g = new Game();
 		Bird b = new Bird();
@@ -33,7 +40,7 @@ public class Flappy{
 	}
 	
 	public static void moveStuff(Bird b, Pipe p){
-		if(gotInput()){ //TÄHÄN: jos saatu inputtia näppäimistöltä
+		if(true){ //TÄHÄN: jos saatu inputtia näppäimistöltä
 			b.move(20);
 		}  
 		else{b.move(-5);}

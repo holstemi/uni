@@ -2,7 +2,22 @@ package flappy;
 
 import java.awt.*;
 
-public class Bird { //PITÄISI TOIMIA
+public class Bird {
+	
+	/**
+	 * 
+	 * LINTU -OLIO
+	 * 
+	 * @param y						Linnun sijainti y akselilla
+	 * @param x						Linnun sijainti x akselilla (vakio)
+	 * @param vy 					Linnun nopeus y-suunnassa (ei käytössä tällä hetekellä)
+	 * @param lintu					Linnun custom kuva
+	 * 
+	 * Metodit:
+	 * + Getterit ja seterit
+	 * + move(int amount)			Siirtää lintua y -suunnassa amount verran
+	 */
+	
 	private int y;
 	public final int x;
 	//private int vy;
