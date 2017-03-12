@@ -9,8 +9,9 @@ public class Highscore {
 	 * HISCORE -OLIO
 	 * 	
 	 * @param t			P‰‰ttyneen pelin tulos
+	 * @param hi		Paras peliss‰ saavutettu tulos (tallennettu tiedostoon)
 	 * @return			Paras tulos, joka saavutettu peliss‰
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException, IOExeption
 	 */
 	
 	public static int check(int t) throws FileNotFoundException, IOException{
@@ -45,7 +46,8 @@ public class Highscore {
 						return hi;
 						}
 				}
-			} catch (IOException e) {
+			} 
+			catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				try(PrintWriter out = new PrintWriter("score.txt")){
@@ -54,21 +56,14 @@ public class Highscore {
 				}
 			}
 		
-		catch (NumberFormatException e){
-			e.printStackTrace();
-			FileWriter wr = new FileWriter(f, false); //set 2nd param. false to overwrite.
-			wr.write(Integer.toString(0));
-			wr.close();
-			return 0;
-		}
+			catch (NumberFormatException e){
+				e.printStackTrace();
+				FileWriter wr = new FileWriter(f, false); //set 2nd param. false to overwrite.
+				wr.write(Integer.toString(0));
+				wr.close();
+				return 0;
+			}
 		return t;
-		
-		
-		/*else{
-			try(PrintWriter out = new PrintWriter("score")){
-			    out.println(Integer.toString(t));
-			    return t;
-			}*/
 		}
 	
 	}

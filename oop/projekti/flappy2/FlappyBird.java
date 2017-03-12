@@ -223,7 +223,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
 		}
 
 		g.setColor(Color.white);
-		g.setFont(new Font("Comic Sans", 1, 50));
+		g.setFont(new Font("Comic Sans MS", 1, 50));
 
 		if (!started)
 		{
